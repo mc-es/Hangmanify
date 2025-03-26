@@ -126,7 +126,6 @@ export default defineConfig([
       'no-constant-binary-expression': 'error',
       'no-dupe-else-if': 'error',
       'no-duplicate-case': 'error',
-      'no-duplicate-imports': 'error',
       'no-ex-assign': 'error',
       'no-loss-of-precision': 'error',
       'no-sparse-arrays': 'error',

@@ -24,10 +24,13 @@ export default defineConfig([
   pluginReact.configs.flat.recommended,
   {
     ignores: [
+      'docs',
       'node_modules',
       'plugins',
+      '.docz',
       '.storybook',
       'babel.config.js',
+      'gatsby-node.js',
       'metro.config.js',
     ],
   },

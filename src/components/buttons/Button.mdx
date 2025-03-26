@@ -1,0 +1,23 @@
+---
+name: Button
+route: /button
+---
+
+import { Playground, Props } from 'docz';
+
+import Button from './Button';
+
+<Props of={Button} />
+
+# Button Component
+
+This component is a simple React Native button.
+When clicking the button (onpress), the specified function works and the text given on the button (text) is displayed.
+
+## Basic Usage
+
+The following example shows how to use the button:
+
+<Playground>
+  <Button text="Click" onPress={() => console.log('The button is clicked!')} />
+</Playground>

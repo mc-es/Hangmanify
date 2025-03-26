@@ -7,3 +7,5 @@ README.md
 .env
 yarn.lock
 .expo
+.docz
+docs

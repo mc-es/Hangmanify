@@ -1,7 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
+
+import * as Storybook from './.storybook';
 
 const App = (): React.JSX.Element => (
   <View style={styles.container}>
@@ -10,7 +13,7 @@ const App = (): React.JSX.Element => (
   </View>
 );
 
-export default App;
+export default Constants.expoConfig?.extra?.storybookEnabled ? Storybook.default : App;
 
 const styles = StyleSheet.create({
   container: {

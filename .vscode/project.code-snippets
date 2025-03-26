@@ -10,7 +10,7 @@
       "const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = (): React.JSX.Element => {",
       "  return (",
       "    <View style={styles.container}>",
-      "      <Text>$1</Text>",
+      "      <Text>$TM_FILENAME_BASE</Text>",
       "    </View>",
       "  );",
       "};",

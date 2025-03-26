@@ -16,6 +16,8 @@ export default {
 
   create(context) {
     const filename = context.getFilename();
+    if (filename.includes('.stories.')) return {};
+
     const baseFilename = path.basename(filename, path.extname(filename));
 
     if (baseFilename.toLowerCase() === 'index') return {};

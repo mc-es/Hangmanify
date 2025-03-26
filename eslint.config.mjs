@@ -23,7 +23,13 @@ export default defineConfig([
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
-    ignores: ['node_modules', 'yarn.lock', 'plugins'],
+    ignores: [
+      'node_modules',
+      'plugins',
+      '.storybook',
+      'babel.config.js',
+      'metro.config.js',
+    ],
   },
   {
     settings: {

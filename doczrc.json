@@ -1,0 +1,8 @@
+{
+  "files": "**/*.{md,markdown,mdx}",
+  "typescript": true,
+  "title": "Hangmanify",
+  "dest": "docs",
+  "base": "/Hangmanify/",
+  "ignore": ["README.md"]
+}

@@ -1,0 +1,61 @@
+{
+  "React Native TSX Component": {
+    "prefix": "rntsx",
+    "body": [
+      "import React from 'react';",
+      "import { StyleSheet, Text, View } from 'react-native';",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {}",
+      "",
+      "const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = (): React.JSX.Element => {",
+      "  return (",
+      "    <View style={styles.container}>",
+      "      <Text>$1</Text>",
+      "    </View>",
+      "  );",
+      "};",
+      "",
+      "export default $TM_FILENAME_BASE;",
+      "",
+      "const styles = StyleSheet.create({",
+      "  container: {",
+      "    flex: 1",
+      "  },",
+      "});",
+    ],
+    "description": "Template for a new React Native TSX component",
+  },
+  "UseState String": {
+    "prefix": "usestr",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<string>(${2:''});",
+    ],
+    "description": "useState hook with string type",
+  },
+  "UseState Number": {
+    "prefix": "usenum",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<number>(${2:0});",
+    ],
+    "description": "useState hook with number type",
+  },
+  "UseState Array": {
+    "prefix": "usearr",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<[]>(${2:[]});",
+    ],
+    "description": "useState hook with string array type",
+  },
+  "useState Hook": {
+    "prefix": "usestate",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<${2:type}>(${3:initialValue});",
+    ],
+    "description": "Template useState hook",
+  },
+  "useEffect Hook": {
+    "prefix": "useeffect",
+    "body": ["useEffect(() => {", "  ${0}", "}, []);"],
+    "description": "Template useEffect hook",
+  },
+}

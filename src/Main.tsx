@@ -4,9 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Button from './components/buttons/Button';
 import { LANGUAGE_CODES } from './constants/localization';
-import { useTheme } from './contexts/ThemeContext';
 
-import { useI18n } from './contexts';
+import { useI18n, useTheme } from './contexts';
 
 const Main = (): React.JSX.Element => {
   const { theme, toggleTheme } = useTheme();

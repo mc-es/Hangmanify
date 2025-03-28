@@ -1,0 +1,6 @@
+{
+  "greetings": {
+    "hi": "Merhaba {{name}}",
+    "welcome": "Uygulamama Hoşgeldiniz!"
+  }
+}

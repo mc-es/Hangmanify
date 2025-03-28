@@ -90,7 +90,7 @@ export default defineConfig([
       'func-name-matching': ['error', 'never'],
       'func-names': ['error', 'as-needed'],
       'guard-for-in': 'error',
-      'id-length': ['error', { exceptions: ['x', 'y', 'z', 'i'], max: 30, min: 2 }],
+      'id-length': ['error', { exceptions: ['x', 'y', 'z', 'i', 't'], max: 30, min: 2 }],
       'logical-assignment-operators': ['error', 'always'],
       'no-alert': 'error',
       'no-array-constructor': 'error',

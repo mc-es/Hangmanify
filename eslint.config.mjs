@@ -48,6 +48,7 @@ export default defineConfig([
       '@custom-typescript/jsx-sort-props': 'error',
       '@custom-typescript/require-try-catch-async': 'error',
       '@custom-typescript/require-usestate-type': 'error',
+      '@custom-typescript/valid-translation-key': 'error',
 
       //- typescript rules
       '@typescript-eslint/consistent-type-exports': 'error',

@@ -11,7 +11,7 @@ interface ThemeContextProps {
   toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({
+const ThemeContext = createContext<ThemeContextProps>({
   system: SYSTEM_THEME.LIGHT,
   theme: LightTheme,
   toggleTheme: () => {},
@@ -37,7 +37,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setTheme((prevTheme) => (prevTheme === LightTheme ? DarkTheme : LightTheme));
   };
 
-  const contextValue = useMemo(
+  const contextValue = useMemo<ThemeContextProps>(
     () => ({
       system: computedSystem,
       theme,
@@ -49,4 +49,5 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 };
 
-export const useTheme = (): ThemeContextProps => useContext(ThemeContext);
+export const useTheme = (): ThemeContextProps =>
+  useContext<ThemeContextProps>(ThemeContext);

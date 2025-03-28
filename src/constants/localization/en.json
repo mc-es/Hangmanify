@@ -1,0 +1,6 @@
+{
+  "greetings": {
+    "hi": "Hi {{name}}",
+    "welcome": "Welcome to My App!"
+  }
+}

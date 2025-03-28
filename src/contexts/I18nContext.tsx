@@ -2,12 +2,14 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 
 import type { TranslateOptions } from 'i18n-js';
 
-import type {
-  AvailableLanguages,
-  DotNotationKeys,
-  TranslationKeys,
-} from 'src/constants/localization';
-import { i18n, LANGUAGE_CODES, LOCAL_UNITS } from 'src/constants/localization';
+import i18n from 'src/constants/localization/i18n';
+import {
+  type AvailableLanguages,
+  type DotNotationKeys,
+  LANGUAGE_CODES,
+} from 'src/constants/localization/languages';
+import { LOCAL_UNITS } from 'src/constants/localization/local-units';
+import type { TranslationKeys } from 'src/constants/localization/translation-keys';
 import { getNestedValue, interpolate } from 'src/utils/helper';
 
 type I18nFunction = (

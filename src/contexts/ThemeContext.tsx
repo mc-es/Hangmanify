@@ -2,8 +2,8 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import type { ColorSchemeName } from 'react-native';
 import { useColorScheme } from 'react-native';
 
-import type { Theme } from 'src/constants/styles';
-import { DarkTheme, LightTheme, SYSTEM_THEME } from 'src/constants/styles';
+import type { Theme } from 'src/constants/styles/themes';
+import { DarkTheme, LightTheme, SYSTEM_THEME } from 'src/constants/styles/themes';
 
 interface ThemeContextProps {
   system: SYSTEM_THEME;

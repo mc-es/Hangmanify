@@ -4,8 +4,10 @@ import { View } from 'react-native';
 import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 
-import { I18nProvider, ThemeProvider } from 'src/contexts';
 import Main from 'src/Main';
+
+import { I18nProvider } from 'src/contexts/I18nContext';
+import { ThemeProvider } from 'src/contexts/ThemeContext';
 
 import * as Storybook from '.storybook';
 

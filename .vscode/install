@@ -1,0 +1,15 @@
+#!/bin/bash
+
+EXTENSIONS=$(jq -r '.recommendations[]' extensions.json)
+
+if [ -z "$EXTENSIONS" ]; then
+  echo "❌ No extensions found in extensions.json!"
+  exit 1
+fi
+
+for extension in $EXTENSIONS; do
+  echo "🔄 Downloading: $extension"
+  code --install-extension "$extension" || echo "❌ Failed to install: $extension"
+done
+
+echo "✅ All extensions have successfully loaded!"

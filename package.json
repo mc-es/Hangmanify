@@ -14,7 +14,8 @@
     "storybook-generate": "sb-rn-get-stories",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "docz:serve": "docz serve"
+    "docz:serve": "docz serve",
+    "install-vscode-extensions": "cd .vscode && chmod +x install && ./install"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5.1.2",

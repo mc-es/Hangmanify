@@ -2,5 +2,239 @@
   "sonarlint.connectedMode.project": {
     "connectionId": "hangmanify",
     "projectKey": "mces58_Hangmanify"
-  }
+  },
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Aura Dracula Spirit",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.files.color": "#42a5f5",
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.sideBar.location": "left",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": "multiple",
+  "editor.formatOnSave": true,
+  "workbench.activityBar.location": "default",
+  "workbench.layoutControl.enabled": false,
+  "workbench.tips.enabled": false,
+  "workbench.colorCustomizations": {
+    "editorSuggestWidget.selectedBackground": "#231739",
+    "sideBar.background": "#140E1A",
+    "list.activeSelectionBackground": "#231739",
+    "list.inactiveSelectionBackground": "#231739",
+    "list.focusBackground": "#231739",
+    "list.hoverBackground": "#231739",
+    "terminalCursor.foreground": "#9d77ff",
+    "statusBar.background": "#664ca8",
+    "statusBar.foreground": "#FFF",
+    "statusBar.noFolderBackground": "#333",
+    "statusBar.noFolderForeground": "#fff",
+    "editorIndentGuide.activeBackground1": "#eec200",
+    "gitDecoration.modifiedResourceForeground": "#ffa060",
+    "gitDecoration.stageModifiedResourceForeground": "#bffd6e"
+  },
+  "editor.minimap.enabled": true,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "auto",
+  "editor.overviewRulerBorder": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.tabSize": 2,
+  "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontSize": 12,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 2,
+  "editor.rulers": [90, 120],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "breadcrumbs.enabled": true,
+  "explorer.compactFolders": false,
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.cursorStyleInactive": "underline",
+  "terminal.integrated.mouseWheelZoom": true,
+  "editor.mouseWheelZoom": true,
+  "git.requireGitUserConfig": true,
+  "editor.parameterHints.enabled": false,
+  "editor.suggest.showWords": false,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.wrappingIndent": "same",
+  "editor.autoIndent": "full",
+  "editor.codeLens": true,
+  "files.watcherExclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "workbench.editor.tabSizing": "shrink",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "editor.renderWhitespace": "all",
+  "editor.scrollBeyondLastLine": false,
+  "terminal.integrated.copyOnSelection": true,
+  "workbench.editor.openSideBySideDirection": "down",
+  "editor.minimap.maxColumn": 120,
+  "editor.minimap.renderCharacters": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.copyWithSyntaxHighlighting": false,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "editor.wordSeparators": "~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+  "editor.renderLineHighlight": "gutter",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "explorer.sortOrder": "type",
+  "workbench.tree.indent": 12,
+  "editor.largeFileOptimizations": false,
+  //! indentRainbow extension
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.07)",
+    "rgba(127,255,127,0.07)",
+    "rgba(255,127,255,0.07)",
+    "rgba(79,236,236,0.07)"
+  ],
+  "indentRainbow.errorColor": "rgba(128,32,32,0.6)",
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#000",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#FF2D00",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "+",
+      "color": "#000",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#3498DB",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "//",
+      "color": "#000",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "#474747",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "-",
+      "color": "#000",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#FF8C00",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "*",
+      "color": "#000",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#98C379",
+      "bold": false,
+      "italic": true
+    }
+  ],
+  "hediet.vscode-drawio.resizeImages": null,
+  "sonarlint.focusOnNewCode": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  //- This setting has an application scope and can be set only in the user settings file.
+  //+ "extensions.autoUpdate": true,
+  //+ "extensions.autoCheckUpdates": true,
+  //+ "window.restoreFullscreen": true,
+  //+ "telemetry.telemetryLevel": "off",
+  //+ "window.customTitleBarVisibility": "never",
+  //+ "window.menuBarVisibility": "visible"
+
+  "material-icon-theme.files.customClones": [
+    {
+      "name": "custom-changelog",
+      "base": "changelog",
+      "color": "gray-300",
+      "fileNames": ["extensions.json"]
+    },
+    {
+      "name": "custom-controller",
+      "base": "settings",
+      "color": "indigo-400",
+      "fileNames": ["settings.json", "app.json", "app.config.ts"]
+    },
+    {
+      "name": "custom-i18n",
+      "base": "i18n",
+      "color": "purple-300",
+      "fileNames": ["i18n.ts"]
+    },
+    {
+      "name": "custom-palette",
+      "base": "palette",
+      "color": "yellow-600",
+      "fileNames": ["colors.ts"]
+    },
+    {
+      "name": "custom-pre-commit",
+      "base": "pre-commit",
+      "color": "brown-900",
+      "fileNames": ["commit-msg", "pre-commit"]
+    },
+    {
+      "name": "custom-todo",
+      "base": "todo",
+      "color": "lime-400",
+      "fileNames": ["eas.json"]
+    },
+    {
+      "name": "custom-istanbul",
+      "base": "istanbul",
+      "color": "red-600",
+      "fileNames": ["doczrc.json"]
+    },
+    {
+      "name": "custom-trigger",
+      "base": "trigger",
+      "color": "cyan-300",
+      "fileNames": [".lintstagedrc"]
+    }
+  ],
+  "material-icon-theme.folders.customClones": [
+    {
+      "name": "custom-layout",
+      "base": "element",
+      "color": "red-500",
+      "folderNames": ["buttons"],
+      "rootFolderNames": ["src"]
+    },
+    {
+      "name": "custom-route",
+      "base": "routes",
+      "color": "purple-400",
+      "folderNames": ["navigations"],
+      "rootFolderNames": ["src"]
+    },
+    {
+      "name": "custom-config",
+      "base": "tools",
+      "color": "brown-500",
+      "folderNames": [".sonarlint"],
+      "rootFolderNames": ["."]
+    }
+  ]
 }

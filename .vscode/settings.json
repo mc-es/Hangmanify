@@ -212,6 +212,12 @@
       "base": "trigger",
       "color": "cyan-300",
       "fileNames": [".lintstagedrc"]
+    },
+    {
+      "name": "custom-scheme",
+      "base": "scheme",
+      "color": "orange-800",
+      "fileNames": ["useStore.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [

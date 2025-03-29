@@ -7,7 +7,7 @@ export const enum RootNavigations {
 
 export type RootStackParamList = {
   [RootNavigations.HOME]: undefined;
-  [RootNavigations.ABOUT]: { count: number };
+  [RootNavigations.ABOUT]: undefined;
 };
 
 type ScreenProps<T extends keyof RootStackParamList> = NativeStackScreenProps<

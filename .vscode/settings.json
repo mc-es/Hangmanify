@@ -181,13 +181,19 @@
       "name": "custom-i18n",
       "base": "i18n",
       "color": "purple-300",
-      "fileNames": ["i18n.ts"]
+      "fileNames": ["i18n.ts", "I18nContext.tsx"]
+    },
+    {
+      "name": "custom-key",
+      "base": "key",
+      "color": "brown-400",
+      "fileNames": ["en.json", "tr.json", "translation-keys.d.ts"]
     },
     {
       "name": "custom-palette",
       "base": "palette",
       "color": "yellow-600",
-      "fileNames": ["colors.ts"]
+      "fileNames": ["colors.ts", "themes.ts", "ThemeContext.tsx"]
     },
     {
       "name": "custom-pre-commit",
@@ -224,6 +230,24 @@
       "base": "routing",
       "color": "pink-600",
       "fileNames": ["RootNavigation.tsx", "RootStackParamList.ts"]
+    },
+    {
+      "name": "custom-virtual",
+      "base": "virtual",
+      "color": "green-600",
+      "fileNames": ["Home.tsx", "About.tsx"]
+    },
+    {
+      "name": "custom-syncpack",
+      "base": "syncpack",
+      "color": "red-500",
+      "fileNames": ["helper.ts"]
+    },
+    {
+      "name": "custom-edge",
+      "base": "edge",
+      "color": "teal-400",
+      "fileNames": ["text.ts", "counter.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [

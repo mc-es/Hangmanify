@@ -218,6 +218,12 @@
       "base": "scheme",
       "color": "orange-800",
       "fileNames": ["useStore.ts"]
+    },
+    {
+      "name": "custom-routing",
+      "base": "routing",
+      "color": "pink-600",
+      "fileNames": ["RootNavigation.tsx", "RootStackParamList.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [

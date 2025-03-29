@@ -1,19 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Button from 'src/components/buttons/Button';
-import type { ScreenNRProps } from 'src/navigations/RootStackParamList';
+import {
+  type NavigationNames,
+  useNavigation,
+  useRoute,
+} from 'src/navigations/RootStackParamList';
+import { useCounter, useGlobalText } from 'src/stores/useStore';
 
-const About: React.FC<ScreenNRProps['About']> = ({
-  navigation,
-  route,
-}): React.JSX.Element => (
-  <View style={styles.container}>
-    <Text>About</Text>
-    <Text>{route.params.count}</Text>
-    <Button onPress={() => navigation.goBack()} text="Home" />
-  </View>
-);
+const About = (): React.JSX.Element => {
+  const { count, decrease } = useCounter();
+  const { text, setText } = useGlobalText();
+  const navigation = useNavigation();
+  const route = useRoute<NavigationNames.ABOUT>();
+
+  return (
+    <View style={styles.container}>
+      <Text>About</Text>
+      <Text>{count}</Text>
+      <Text>{route.params.name}</Text>
+      <Button onPress={decrease} text="Decreasement" />
+      <Button onPress={() => navigation.goBack()} text="Home" />
+      <TextInput
+        onChangeText={(input: string) => setText(input)}
+        placeholder="input"
+        style={{ borderWidth: 1, width: '50%' }}
+        value={text}
+      />
+    </View>
+  );
+};
 
 export default About;
 

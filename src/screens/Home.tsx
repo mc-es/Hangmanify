@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Button from 'src/components/buttons/Button';
-import type { ScreenNRProps } from 'src/navigations/RootStackParamList';
-import { RootNavigations } from 'src/navigations/RootStackParamList';
+import { NavigationNames, useNavigation } from 'src/navigations/RootStackParamList';
+import { useCounter, useGlobalText } from 'src/stores/useStore';
 
-const Home: React.FC<ScreenNRProps['Home']> = ({ navigation }): React.JSX.Element => {
-  const [count, setCount] = useState<number>(0);
+const Home = (): React.JSX.Element => {
+  const { count, increase } = useCounter();
+  const { text, setText } = useGlobalText();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Text>Home</Text>
       <Text>{count}</Text>
-      <Button onPress={() => setCount(count + 1)} text="Increment" />
+      <Button onPress={increase} text="Increment" />
       <Button
-        onPress={() => navigation.navigate(RootNavigations.ABOUT, { count })}
+        onPress={() => navigation.navigate(NavigationNames.ABOUT, { name: 'can' })}
         text="About"
+      />
+      <TextInput
+        onChangeText={(input: string) => setText(input)}
+        placeholder="input"
+        style={{ borderWidth: 1, width: '50%' }}
+        value={text}
       />
     </View>
   );

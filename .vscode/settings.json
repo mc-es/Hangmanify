@@ -248,6 +248,18 @@
       "base": "edge",
       "color": "teal-400",
       "fileNames": ["text.ts", "counter.ts"]
+    },
+    {
+      "name": "custom-fortran",
+      "base": "fortran",
+      "color": "pink-500",
+      "fileNames": ["fonts.ts", "load-fonts.ts"]
+    },
+    {
+      "name": "custom-pawn",
+      "base": "pawn",
+      "color": "purple-500",
+      "fileNames": ["index.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [
@@ -271,6 +283,13 @@
       "color": "brown-500",
       "folderNames": [".sonarlint"],
       "rootFolderNames": ["."]
+    },
+    {
+      "name": "custom-seeders",
+      "base": "seeders",
+      "color": "green-500",
+      "folderNames": ["poppins", "nunito"],
+      "rootFolderNames": ["src"]
     }
   ]
 }

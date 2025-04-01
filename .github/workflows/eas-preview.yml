@@ -1,4 +1,4 @@
-name: Update Expo EAS Preview
+name: Update EAS Preview
 
 on:
   push:

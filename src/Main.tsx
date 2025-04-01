@@ -9,7 +9,9 @@ const Main = (): React.JSX.Element => {
   const { theme } = useTheme();
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: theme.palette.background }]}
+    >
       <RootNavigation />
     </SafeAreaView>
   );

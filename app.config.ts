@@ -25,6 +25,7 @@ export default ({ config }: { config: ExpoConfig }): ExpoConfig => ({
     },
   },
   plugins: [
+    'expo-localization',
     [
       'expo-splash-screen',
       {
@@ -35,6 +36,23 @@ export default ({ config }: { config: ExpoConfig }): ExpoConfig => ({
           image: './assets/images/splash-icon-light.png',
           backgroundColor: '#151718',
         },
+      },
+    ],
+    [
+      'expo-font',
+      {
+        fonts: [
+          './assets/fonts/nunito/Nunito-Bold.ttf',
+          './assets/fonts/nunito/Nunito-Light.ttf',
+          './assets/fonts/nunito/Nunito-Medium.ttf',
+          './assets/fonts/nunito/Nunito-Regular.ttf',
+          './assets/fonts/nunito/Nunito-SemiBold.ttf',
+          './assets/fonts/poppins/Poppins-Bold.ttf',
+          './assets/fonts/poppins/Poppins-Light.ttf',
+          './assets/fonts/poppins/Poppins-Medium.ttf',
+          './assets/fonts/poppins/Poppins-Regular.ttf',
+          './assets/fonts/poppins/Poppins-SemiBold.ttf',
+        ],
       },
     ],
   ],

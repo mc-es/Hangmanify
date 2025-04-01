@@ -9,6 +9,7 @@ import Main from 'src/Main';
 
 import { I18nProvider } from 'src/contexts/I18nContext';
 import { ThemeProvider } from 'src/contexts/ThemeContext';
+import { loadFonts } from 'src/utils/load-fonts';
 
 import * as Storybook from '.storybook';
 
@@ -20,8 +21,7 @@ const App = (): React.JSX.Element => {
   useEffect(() => {
     const prepare = async (): Promise<void> => {
       try {
-        // simulated loading time
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await loadFonts();
       } catch (error) {
         console.warn(error);
       } finally {

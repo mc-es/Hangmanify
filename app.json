@@ -4,26 +4,13 @@
     "slug": "Hangmanify",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.mces58.hangmanify"
-    },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icons/web/favicon.png"
     },
     "plugins": ["expo-localization"]
   }

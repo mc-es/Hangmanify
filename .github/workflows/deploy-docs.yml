@@ -4,7 +4,6 @@ name: Deploy Docz to Pages
 on:
   push:
     branches: ['master']
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,6 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+          cache: yarn
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build Docz documentation

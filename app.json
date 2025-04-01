@@ -11,7 +11,6 @@
     },
     "web": {
       "favicon": "./assets/icons/web/favicon.png"
-    },
-    "plugins": ["expo-localization"]
+    }
   }
 }

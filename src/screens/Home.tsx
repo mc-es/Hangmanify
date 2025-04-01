@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Button from 'src/components/buttons/Button';
+import { useTheme } from 'src/contexts/ThemeContext';
 import { NavigationNames, useNavigation } from 'src/navigations/RootStackParamList';
 import { useCounter, useGlobalText } from 'src/stores/useStore';
 
@@ -9,10 +10,27 @@ const Home = (): React.JSX.Element => {
   const { count, increase } = useCounter();
   const { text, setText } = useGlobalText();
   const navigation = useNavigation();
+  const { theme } = useTheme();
 
   return (
     <View style={styles.container}>
       <Text>Home</Text>
+      <Text
+        style={{
+          fontFamily: theme.global.font.families.poppins.bold,
+          fontSize: theme.global.font.sizes._24,
+        }}
+      >
+        Poppins
+      </Text>
+      <Text
+        style={{
+          fontFamily: theme.global.font.families.nunito.bold,
+          fontSize: theme.global.font.sizes._24,
+        }}
+      >
+        Nunito
+      </Text>
       <Text>{count}</Text>
       <Button onPress={increase} text="Increment" />
       <Button

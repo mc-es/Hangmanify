@@ -11,12 +11,17 @@ import { loadFonts } from 'src/utils/load-fonts';
 
 import * as Storybook from '.storybook';
 
-SplashScreen.preventAutoHideAsync().catch((error) => console.error(error));
+const isStorybookEnabled = Constants.expoConfig?.extra?.storybookEnabled as boolean;
+
+if (!isStorybookEnabled)
+  SplashScreen.preventAutoHideAsync().catch((error) => console.error(error));
 
 const App = (): React.JSX.Element => {
-  const [isAppReady, setIsAppReady] = useState<boolean>(false);
+  const [isAppReady, setIsAppReady] = useState<boolean>(isStorybookEnabled);
 
   useEffect(() => {
+    if (isStorybookEnabled) return;
+
     const prepare = async (): Promise<void> => {
       try {
         await loadFonts();
@@ -42,4 +47,4 @@ const App = (): React.JSX.Element => {
   );
 };
 
-export default Constants.expoConfig?.extra?.storybookEnabled ? Storybook.default : App;
+export default isStorybookEnabled ? Storybook.default : App;

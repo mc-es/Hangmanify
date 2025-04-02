@@ -1,35 +1,22 @@
 import * as Font from 'expo-font';
 
-import { FONTS } from 'src/constants/styles/fonts';
+import { APP_FONTS } from 'assets/fonts';
 
-import {
-  NunitoBold,
-  NunitoLight,
-  NunitoMedium,
-  NunitoRegular,
-  NunitoSemiBold,
-} from 'assets/fonts/nunito';
-import {
-  PoppinsBold,
-  PoppinsLight,
-  PoppinsMedium,
-  PoppinsRegular,
-  PoppinsSemiBold,
-} from 'assets/fonts/poppins';
+import { FONTS } from 'src/constants/styles/fonts';
 
 export const loadFonts = async (): Promise<void> => {
   try {
     await Font.loadAsync({
-      [FONTS.Nunito.Bold]: NunitoBold,
-      [FONTS.Nunito.Light]: NunitoLight,
-      [FONTS.Nunito.Medium]: NunitoMedium,
-      [FONTS.Nunito.Regular]: NunitoRegular,
-      [FONTS.Nunito.SemiBold]: NunitoSemiBold,
-      [FONTS.Poppins.Bold]: PoppinsBold,
-      [FONTS.Poppins.Light]: PoppinsLight,
-      [FONTS.Poppins.Medium]: PoppinsMedium,
-      [FONTS.Poppins.Regular]: PoppinsRegular,
-      [FONTS.Poppins.SemiBold]: PoppinsSemiBold,
+      [FONTS.Nunito.Bold]: APP_FONTS.nunito.bold,
+      [FONTS.Nunito.Light]: APP_FONTS.nunito.light,
+      [FONTS.Nunito.Medium]: APP_FONTS.nunito.medium,
+      [FONTS.Nunito.Regular]: APP_FONTS.nunito.regular,
+      [FONTS.Nunito.SemiBold]: APP_FONTS.nunito.semibold,
+      [FONTS.Poppins.Bold]: APP_FONTS.poppins.bold,
+      [FONTS.Poppins.Light]: APP_FONTS.poppins.light,
+      [FONTS.Poppins.Medium]: APP_FONTS.poppins.medium,
+      [FONTS.Poppins.Regular]: APP_FONTS.poppins.regular,
+      [FONTS.Poppins.SemiBold]: APP_FONTS.poppins.semibold,
     });
   } catch (error) {
     console.error('Error loading fonts', error);

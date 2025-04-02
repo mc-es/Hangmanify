@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
 
 import Constants from 'expo-constants';
 import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
 
 import Main from 'src/Main';
 
@@ -38,10 +36,7 @@ const App = (): React.JSX.Element => {
   return (
     <ThemeProvider>
       <I18nProvider>
-        <View style={{ flex: 1 }}>
-          <StatusBar style="auto" />
-          <Main />
-        </View>
+        <Main />
       </I18nProvider>
     </ThemeProvider>
   );

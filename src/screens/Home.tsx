@@ -6,6 +6,8 @@ import { useTheme } from 'src/contexts/ThemeContext';
 import { NavigationNames, useNavigation } from 'src/navigations/RootStackParamList';
 import { useCounter, useGlobalText } from 'src/stores/useStore';
 
+import ExpoLogo from 'assets/svgs/expo.svg';
+
 const Home = (): React.JSX.Element => {
   const { count, increase } = useCounter();
   const { text, setText } = useGlobalText();
@@ -13,7 +15,8 @@ const Home = (): React.JSX.Element => {
   const { theme } = useTheme();
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.palette.background }]}>
+      <ExpoLogo fill={'red'} height={60} width={60} />
       <Text>Home</Text>
       <Text
         style={{

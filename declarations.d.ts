@@ -1,6 +1,12 @@
 /* eslint-disable @custom-typescript/filename-match-component */
-
 declare module '*.ttf' {
-  const font: string;
-  export default font;
+  import type { FontSource } from 'expo-font';
+  const content: FontSource;
+  export default content;
+}
+
+declare module '*.svg' {
+  import type { SvgProps } from 'react-native-svg';
+  const content: React.FC<SvgProps>;
+  export default content;
 }

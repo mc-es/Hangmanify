@@ -32,6 +32,8 @@ export default defineConfig([
       'babel.config.js',
       'gatsby-node.js',
       'metro.config.js',
+      'tailwind.config.js',
+      'postcss.config.mjs',
     ],
   },
   {

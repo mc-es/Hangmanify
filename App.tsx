@@ -9,6 +9,7 @@ import { I18nProvider } from 'src/contexts/I18nContext';
 import { ThemeProvider } from 'src/contexts/ThemeContext';
 import { loadFonts } from 'src/utils/load-fonts';
 
+import './global.css';
 import * as Storybook from '.storybook';
 
 const isStorybookEnabled = Constants.expoConfig?.extra?.storybookEnabled as boolean;

@@ -1,18 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
+import {
+  useAppCounter,
+  useAppGlobalText,
+  useAppNavigation,
+  useAppTheme,
+} from 'src/hooks';
+
 import Button from 'src/components/buttons/Button';
-import { useTheme } from 'src/contexts/ThemeContext';
-import { NavigationNames, useNavigation } from 'src/navigations/RootStackParamList';
-import { useCounter, useGlobalText } from 'src/stores/useStore';
+import { NavigationNames } from 'src/navigations/RootStackParamList';
 
 import ExpoLogo from 'assets/svgs/expo.svg';
 
 const Home = (): React.JSX.Element => {
-  const { count, increase } = useCounter();
-  const { text, setText } = useGlobalText();
-  const navigation = useNavigation();
-  const { theme } = useTheme();
+  const { count, increase } = useAppCounter();
+  const { text, setText } = useAppGlobalText();
+  const navigation = useAppNavigation();
+  const { theme } = useAppTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.palette.background }]}>

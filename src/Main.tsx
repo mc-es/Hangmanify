@@ -4,11 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { StatusBar } from 'expo-status-bar';
 
-import { useTheme } from './contexts/ThemeContext';
 import RootNavigation from './navigations/RootNavigation';
 
+import { useAppTheme } from './hooks';
+
 const Main = (): React.JSX.Element => {
-  const { theme } = useTheme();
+  const { theme } = useAppTheme();
 
   return (
     <SafeAreaView

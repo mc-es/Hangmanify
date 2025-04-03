@@ -49,6 +49,17 @@ export default defineConfig([
       '@custom-typescript/require-try-catch-async': 'error',
       '@custom-typescript/require-usestate-type': 'error',
       '@custom-typescript/valid-translation-key': 'error',
+      '@custom-typescript/no-direct-hook-imports': [
+        'error',
+        {
+          allowedImports: [
+            'react',
+            'react-native',
+            'zustand/shallow',
+            '@react-navigation/native',
+          ],
+        },
+      ],
 
       //- typescript rules
       '@typescript-eslint/consistent-type-exports': 'error',

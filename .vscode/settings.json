@@ -156,6 +156,7 @@
   "hediet.vscode-drawio.resizeImages": null,
   "sonarlint.focusOnNewCode": true,
   "liveServer.settings.donotShowInfoMsg": true,
+  "css.customData": [".vscode/tailwind.json"],
   //- This setting has an application scope and can be set only in the user settings file.
   //+ "extensions.autoUpdate": true,
   //+ "extensions.autoCheckUpdates": true,
@@ -260,6 +261,12 @@
       "base": "pawn",
       "color": "purple-500",
       "fileNames": ["index.ts"]
+    },
+    {
+      "name": "custom-tailwindcss",
+      "base": "tailwindcss",
+      "color": "pink-400",
+      "fileNames": ["tailwind.json", "tailwind.config.js"]
     }
   ],
   "material-icon-theme.folders.customClones": [

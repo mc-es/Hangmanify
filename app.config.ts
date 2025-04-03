@@ -24,6 +24,11 @@ const getIosConfig = (): ExpoConfig['ios'] => ({
   },
 });
 
+const getWebConfig = (): ExpoConfig['web'] => ({
+  favicon: './assets/icons/web/favicon.png',
+  bundler: 'metro',
+});
+
 const splashScreenPlugin: [string, Record<string, unknown>] = [
   'expo-splash-screen',
   {
@@ -61,6 +66,7 @@ export default ({ config }: { config: ExpoConfig }): ExpoConfig => ({
   splash: getSplashConfig(),
   android: getAndroidConfig(),
   ios: getIosConfig(),
+  web: getWebConfig(),
   plugins: ['expo-localization', splashScreenPlugin, fontPlugin],
   extra: {
     ...config.extra,

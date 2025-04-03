@@ -1,7 +1,9 @@
 {
   "recommendations": [
     "aaron-bond.better-comments",
+    "bradlc.vscode-tailwindcss",
     "christian-kohler.path-intellisense",
+    "clinyong.vscode-css-modules",
     "dbaeumer.vscode-eslint",
     "donjayamanne.githistory",
     "dsznajder.es7-react-js-snippets",
@@ -24,12 +26,14 @@
     "ms-vscode.remote-explorer",
     "oderwat.indent-rainbow",
     "pkief.material-icon-theme",
+    "pranaygp.vscode-css-peek",
     "ritwickdey.liveserver",
     "shd101wyy.markdown-preview-enhanced",
     "simonsiefke.svg-preview",
     "sonarsource.sonarlint-vscode",
     "unifiedjs.vscode-mdx",
     "wix.vscode-import-cost",
-    "xabikos.javascriptsnippets"
+    "xabikos.javascriptsnippets",
+    "zignd.html-css-class-completion"
   ]
 }

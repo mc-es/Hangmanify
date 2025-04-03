@@ -1,19 +1,20 @@
 const { getDefaultConfig } = require('@expo/metro-config');
-const path = require('path');
+const { withNativeWind } = require('nativewind/metro');
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const path = require('path');
 
-const defaultConfig = getDefaultConfig(__dirname);
+const config = getDefaultConfig(__dirname);
 
-defaultConfig.resolver.assetExts = defaultConfig.resolver.assetExts.filter(
-  (ext) => ext !== 'svg'
-);
-defaultConfig.resolver.sourceExts.push('svg');
-defaultConfig.transformer.babelTransformerPath = require.resolve(
-  'react-native-svg-transformer'
-);
+config.resolver.assetExts = config.resolver.assetExts.filter((ext) => ext !== 'svg');
+config.resolver.sourceExts.push('svg');
+config.transformer.babelTransformerPath = require.resolve('react-native-svg-transformer');
 
-module.exports = withStorybook(defaultConfig, {
-  ...defaultConfig,
+const nativeWindConfig = withNativeWind(config, { input: './global.css' });
+
+const finalConfig = withStorybook(nativeWindConfig, {
+  ...nativeWindConfig,
   enabled: process.env.WITH_STORYBOOK,
   configPath: path.resolve(__dirname, '.storybook'),
 });
+
+module.exports = finalConfig;

@@ -1,19 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-import Button from 'src/components/buttons/Button';
 import {
-  type NavigationNames,
-  useNavigation,
-  useRoute,
-} from 'src/navigations/RootStackParamList';
-import { useCounter, useGlobalText } from 'src/stores/useStore';
+  useAppCounter,
+  useAppGlobalText,
+  useAppNavigation,
+  useAppRoute,
+} from 'src/hooks';
+
+import Button from 'src/components/buttons/Button';
+import { type NavigationNames } from 'src/navigations/RootStackParamList';
 
 const About = (): React.JSX.Element => {
-  const { count, decrease } = useCounter();
-  const { text, setText } = useGlobalText();
-  const navigation = useNavigation();
-  const route = useRoute<NavigationNames.ABOUT>();
+  const { count, decrease } = useAppCounter();
+  const { text, setText } = useAppGlobalText();
+  const navigation = useAppNavigation();
+  const route = useAppRoute<NavigationNames.ABOUT>();
 
   return (
     <View style={styles.container}>

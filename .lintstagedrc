@@ -1,3 +1,7 @@
 {
-  "./**/*.{js,jsx,ts,tsx}": ["yarn format:prettier", "yarn format:lint"]
+  "./**/*.{js,jsx,ts,tsx,json}": [
+    "yarn format:prettier",
+    "yarn format:lint",
+    "yarn expo-doctor ."
+  ]
 }

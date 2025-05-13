@@ -26,7 +26,7 @@ const Home = (): React.JSX.Element => {
       <Text>Home</Text>
       <Text
         style={{
-          fontFamily: theme.global.font.families.poppins.bold,
+          fontFamily: theme.global.font.families.Poppins.Bold,
           fontSize: theme.global.font.sizes._24,
         }}
       >
@@ -35,7 +35,7 @@ const Home = (): React.JSX.Element => {
       <Text
         className="custom_text"
         style={{
-          fontFamily: theme.global.font.families.nunito.bold,
+          fontFamily: theme.global.font.families.Nunito.Bold,
         }}
       >
         Nunito

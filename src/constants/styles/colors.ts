@@ -329,4 +329,4 @@ export const COLORS = {
   VIOLET,
   YELLOW,
   ZINC,
-};
+} as const;

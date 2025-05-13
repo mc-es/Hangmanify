@@ -6,9 +6,9 @@ import type { Theme } from 'src/constants/styles/themes';
 import { DarkTheme, LightTheme, SYSTEM_THEME } from 'src/constants/styles/themes';
 
 interface ThemeContextProps {
-  system: SYSTEM_THEME;
-  theme: Theme;
-  toggleTheme: () => void;
+  readonly system: SYSTEM_THEME;
+  readonly theme: Theme;
+  readonly toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
@@ -24,7 +24,9 @@ const getThemeAndSystem = (
   system: scheme === SYSTEM_THEME.DARK ? SYSTEM_THEME.DARK : SYSTEM_THEME.LIGHT,
 });
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}): React.JSX.Element => {
   const systemColorScheme = useColorScheme();
   const computedSystem = getThemeAndSystem(systemColorScheme).system;
   const [theme, setTheme] = useState<Theme>(getThemeAndSystem(systemColorScheme).theme);

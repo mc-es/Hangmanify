@@ -17,4 +17,4 @@ enum PoppinsFont {
 export const FONTS = {
   Nunito: NunitoFont,
   Poppins: PoppinsFont,
-};
+} as const;

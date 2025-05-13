@@ -24,4 +24,4 @@ export const APP_FONTS = {
     regular: PoppinsRegular,
     semibold: PoppinsSemiBold,
   },
-};
+} as const;

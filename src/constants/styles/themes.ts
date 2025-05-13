@@ -6,57 +6,51 @@ export const enum SYSTEM_THEME {
   DARK = 'dark',
 }
 
+const fontSizes = {
+  _10: 10,
+  _12: 12,
+  _14: 14,
+  _16: 16,
+  _18: 18,
+  _20: 20,
+  _24: 24,
+  _32: 32,
+  _48: 48,
+} as const;
+
+type CommonColors =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'light'
+  | 'dark';
+type ColorFamily = (typeof COLORS)[keyof typeof COLORS];
+type ColorTone = ColorFamily[keyof ColorFamily];
+
 interface Palette {
-  background: string;
-  text: string;
+  readonly background: ColorTone;
+  readonly text: ColorTone;
 }
 
-interface GlobalColors {
-  primary: string;
-  secondary: string;
-  success: string;
-  danger: string;
-  warning: string;
-  info: string;
-  light: string;
-  dark: string;
+interface FontTheme {
+  readonly families: typeof FONTS;
+  readonly sizes: typeof fontSizes;
 }
 
-interface FontWeights {
-  bold: string;
-  light: string;
-  medium: string;
-  regular: string;
-  semiBold: string;
-}
-
-interface FontSizes {
-  _10: number;
-  _12: number;
-  _14: number;
-  _16: number;
-  _18: number;
-  _20: number;
-  _24: number;
-  _32: number;
-  _48: number;
+interface GlobalTheme {
+  color: Record<CommonColors, ColorTone>;
+  font: FontTheme;
 }
 
 export interface Theme {
   palette: Palette;
-  global: {
-    color: GlobalColors;
-    font: {
-      families: {
-        nunito: FontWeights;
-        poppins: FontWeights;
-      };
-      sizes: FontSizes;
-    };
-  };
+  global: GlobalTheme;
 }
 
-const global = {
+const global: GlobalTheme = {
   color: {
     primary: COLORS.BLUE._500,
     secondary: COLORS.GRAY._500,
@@ -68,33 +62,8 @@ const global = {
     dark: COLORS.ZINC._950,
   },
   font: {
-    families: {
-      nunito: {
-        bold: FONTS.Nunito.Bold,
-        light: FONTS.Nunito.Light,
-        medium: FONTS.Nunito.Medium,
-        regular: FONTS.Nunito.Regular,
-        semiBold: FONTS.Nunito.SemiBold,
-      },
-      poppins: {
-        bold: FONTS.Poppins.Bold,
-        light: FONTS.Poppins.Light,
-        medium: FONTS.Poppins.Medium,
-        regular: FONTS.Poppins.Regular,
-        semiBold: FONTS.Poppins.SemiBold,
-      },
-    },
-    sizes: {
-      _10: 10,
-      _12: 12,
-      _14: 14,
-      _16: 16,
-      _18: 18,
-      _20: 20,
-      _24: 24,
-      _32: 32,
-      _48: 48,
-    },
+    families: FONTS,
+    sizes: fontSizes,
   },
 };
 

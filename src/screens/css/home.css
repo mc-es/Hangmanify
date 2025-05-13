@@ -9,3 +9,9 @@
   justify-content: center;
   gap: 10;
 }
+
+@media screen and (min-width: 392px) {
+  .custom_text {
+    @apply text-3xl;
+  }
+}

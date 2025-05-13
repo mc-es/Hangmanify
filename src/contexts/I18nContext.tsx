@@ -18,9 +18,9 @@ type I18nFunction = (
 ) => string;
 
 interface I18nContextProps {
-  locale: AvailableLanguages;
-  toggleI18n: (locale: AvailableLanguages) => void;
-  t: I18nFunction;
+  readonly locale: AvailableLanguages;
+  readonly toggleI18n: (locale: AvailableLanguages) => void;
+  readonly t: I18nFunction;
 }
 
 const getTranslation: I18nFunction = (key, options) => {
@@ -35,7 +35,9 @@ const I18nContext = createContext<I18nContextProps>({
   t: getTranslation,
 });
 
-export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}): React.JSX.Element => {
   const [locale, setLocale] = useState<AvailableLanguages>(
     i18n.locale as AvailableLanguages
   );

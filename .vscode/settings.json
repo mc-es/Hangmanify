@@ -75,7 +75,11 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "workbench.editor.tabSizing": "shrink",
   "editor.codeActionsOnSave": {
-    "source.fixAll": "always"
+    "source.fixAll": "always",
+    "source.organizeImports": "always",
+    "source.removeUnusedImports": "always",
+    "source.removeUnused.ts": "always",
+    "source.addMissingImports.ts": "always"
   },
   "editor.renderWhitespace": "all",
   "editor.scrollBeyondLastLine": false,

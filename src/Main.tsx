@@ -6,10 +6,10 @@ import { StatusBar } from 'expo-status-bar';
 
 import RootNavigation from './navigations/RootNavigation';
 
-import { useAppTheme } from './hooks';
+import { useTheme } from './hooks';
 
 const Main = (): React.JSX.Element => {
-  const { theme } = useAppTheme();
+  const { theme } = useTheme();
 
   return (
     <SafeAreaView

@@ -267,6 +267,12 @@
       "base": "tailwindcss",
       "color": "pink-400",
       "fileNames": ["tailwind.json", "tailwind.config.js"]
+    },
+    {
+      "name": "custom-knip",
+      "base": "knip",
+      "color": "teal-600",
+      "fileNames": ["dimensions.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [

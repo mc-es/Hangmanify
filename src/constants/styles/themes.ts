@@ -1,3 +1,5 @@
+import { Dimensions } from 'src/utils/dimensions';
+
 import { COLORS } from './colors';
 import { FONTS } from './fonts';
 
@@ -6,7 +8,7 @@ export const enum SYSTEM_THEME {
   DARK = 'dark',
 }
 
-const fontSizes = {
+const rawFontSizes = {
   _10: 10,
   _12: 12,
   _14: 14,
@@ -16,7 +18,15 @@ const fontSizes = {
   _24: 24,
   _32: 32,
   _48: 48,
-} as const;
+} satisfies Record<string, number>;
+
+const fontSizes = Object.entries(rawFontSizes).reduce(
+  (acc, [key, value]) => {
+    acc[key as keyof typeof rawFontSizes] = Dimensions.fs(value);
+    return acc;
+  },
+  {} as Record<keyof typeof rawFontSizes, number>
+);
 
 type CommonColors =
   | 'primary'
@@ -27,6 +37,7 @@ type CommonColors =
   | 'info'
   | 'light'
   | 'dark';
+
 type ColorFamily = (typeof COLORS)[keyof typeof COLORS];
 type ColorTone = ColorFamily[keyof ColorFamily];
 

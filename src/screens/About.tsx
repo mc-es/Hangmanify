@@ -1,12 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
+import type { NavigationNames } from 'src/navigations';
+import { useNavigation, useRoute } from 'src/navigations';
+
 import Button from 'src/components/buttons/Button';
-import {
-  type NavigationNames,
-  useNavigation,
-  useRoute,
-} from 'src/navigations/RootStackParamList';
 import { useCounter, useGlobalText } from 'src/stores/useStore';
 
 const About = (): React.JSX.Element => {

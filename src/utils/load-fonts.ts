@@ -2,7 +2,7 @@ import * as Font from 'expo-font';
 
 import { APP_FONTS } from 'assets/fonts';
 
-import { FONTS } from 'src/constants/styles/fonts';
+import { FONTS } from 'src/constants/styles';
 
 export const LoadFonts = async (): Promise<void> => {
   try {

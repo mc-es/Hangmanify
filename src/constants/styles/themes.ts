@@ -1,4 +1,4 @@
-import { Dimensions } from 'src/utils/dimensions';
+import { Dimensions } from 'src/utils';
 
 import { COLORS } from './colors';
 import { FONTS } from './fonts';

@@ -2,10 +2,10 @@ import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 
 import { useCounter, useGlobalText, useNavigation, useTheme } from 'src/hooks';
+import { Dimensions } from 'src/utils';
 
 import Button from 'src/components/buttons/Button';
 import { NavigationNames } from 'src/navigations/RootStackParamList';
-import { Dimensions } from 'src/utils/dimensions';
 
 import './css/home.css';
 import ExpoLogo from 'assets/svgs/expo.svg';

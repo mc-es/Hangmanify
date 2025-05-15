@@ -8,7 +8,7 @@ import { DarkTheme, LightTheme, SYSTEM_THEME } from 'src/constants/styles/themes
 interface ThemeContextProps {
   readonly system: SYSTEM_THEME;
   readonly theme: Theme;
-  readonly toggleTheme: () => void;
+  toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
@@ -19,9 +19,9 @@ const ThemeContext = createContext<ThemeContextProps>({
 
 const getThemeAndSystem = (
   scheme: ColorSchemeName
-): { theme: Theme; system: SYSTEM_THEME } => ({
-  theme: scheme === SYSTEM_THEME.DARK ? DarkTheme : LightTheme,
+): { system: SYSTEM_THEME; theme: Theme } => ({
   system: scheme === SYSTEM_THEME.DARK ? SYSTEM_THEME.DARK : SYSTEM_THEME.LIGHT,
+  theme: scheme === SYSTEM_THEME.DARK ? DarkTheme : LightTheme,
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({

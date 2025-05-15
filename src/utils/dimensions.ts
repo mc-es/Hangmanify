@@ -1,25 +1,25 @@
 import { Dimensions as NativeDimensions, PixelRatio } from 'react-native';
 
-const { width: deviceWidth, height: deviceHeight } = NativeDimensions.get('window');
+const { height: deviceHeight, width: deviceWidth } = NativeDimensions.get('window');
 
 const guidelineBaseWidth = 375;
 const guidelineBaseHeight = 812;
 const BLEND_ZONE = 5;
 
 const BREAKPOINTS = {
-  '2xs': { size: 320, scale: 0.65 },
-  'xs-2xs': { size: 340, scale: 0.7 },
-  xs: { size: 360, scale: 0.75 },
-  'xs-sm': { size: 375, scale: 0.75 },
-  sm: { size: 390, scale: 0.85 },
-  'sm-md': { size: 420, scale: 0.9 },
-  md: { size: 480, scale: 1 },
-  'md-lg': { size: 540, scale: 1.05 },
-  lg: { size: 600, scale: 1.1 },
-  'lg-xl': { size: 680, scale: 1.15 },
-  xl: { size: 760, scale: 1.2 },
-  'xl-2xl': { size: 800, scale: 1.3 },
-  '2xl': { size: 840, scale: 1.4 },
+  '2xl': { scale: 1.4, size: 840 },
+  '2xs': { scale: 0.65, size: 320 },
+  lg: { scale: 1.1, size: 600 },
+  'lg-xl': { scale: 1.15, size: 680 },
+  md: { scale: 1, size: 480 },
+  'md-lg': { scale: 1.05, size: 540 },
+  sm: { scale: 0.85, size: 390 },
+  'sm-md': { scale: 0.9, size: 420 },
+  xl: { scale: 1.2, size: 760 },
+  'xl-2xl': { scale: 1.3, size: 800 },
+  xs: { scale: 0.75, size: 360 },
+  'xs-2xs': { scale: 0.7, size: 340 },
+  'xs-sm': { scale: 0.75, size: 375 },
 } as const;
 
 const easeIn = (t: number): number => t * t;
@@ -78,4 +78,4 @@ const fs = (size: number): number => {
   return Math.round(PixelRatio.roundToNearestPixel(hs(size) * fontScale));
 };
 
-export const Dimensions = { hs, vs, wp, hp, ms, fs };
+export const Dimensions = { fs, hp, hs, ms, vs, wp };

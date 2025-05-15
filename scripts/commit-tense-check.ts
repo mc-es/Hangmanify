@@ -31,7 +31,6 @@ function checkInternetConnection(): Promise<boolean> {
     });
   });
 }
-
 async function isPastTense(text: string): Promise<boolean> {
   const prompt = `Determine if the following text is in past tense:\n\n"${text}"\n\nRespond with "yes" or "no"`;
   try {
@@ -45,7 +44,6 @@ async function isPastTense(text: string): Promise<boolean> {
     throw error;
   }
 }
-
 async function main(): Promise<void> {
   const isConnected = await checkInternetConnection();
   if (!isConnected) {

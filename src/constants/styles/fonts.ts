@@ -5,7 +5,6 @@ enum NunitoFont {
   Regular = 'Nunito-Regular',
   SemiBold = 'Nunito-SemiBold',
 }
-
 enum PoppinsFont {
   Bold = 'Poppins-Bold',
   Light = 'Poppins-Light',

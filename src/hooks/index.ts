@@ -4,7 +4,4 @@ import { useTheme } from 'src/contexts/ThemeContext';
 import { useNavigation, useRoute } from 'src/navigations/RootStackParamList';
 import { useCounter, useGlobalText } from 'src/stores/useStore';
 
-export { useI18n };
-export { useTheme };
-export { useNavigation, useRoute };
-export { useCounter, useGlobalText };
+export { useCounter, useGlobalText, useI18n, useNavigation, useRoute, useTheme };

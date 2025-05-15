@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 
-import { useCounter, useGlobalText, useNavigation, useTheme } from 'src/hooks';
+import { useTheme } from 'src/contexts';
 import { Dimensions } from 'src/utils';
 
 import Button from 'src/components/buttons/Button';
-import { NavigationNames } from 'src/navigations/RootStackParamList';
+import { NavigationNames, useNavigation } from 'src/navigations/RootStackParamList';
+import { useCounter, useGlobalText } from 'src/stores/useStore';
 
 import './css/home.css';
 import ExpoLogo from 'assets/svgs/expo.svg';

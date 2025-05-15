@@ -3,11 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Constants from 'expo-constants';
 import * as SplashScreen from 'expo-splash-screen';
 
+import { I18nProvider, ThemeProvider } from 'src/contexts';
 import Main from 'src/Main';
 import { LoadFonts } from 'src/utils';
-
-import { I18nProvider } from 'src/contexts/I18nContext';
-import { ThemeProvider } from 'src/contexts/ThemeContext';
 
 import './global.css';
 import * as Storybook from '.storybook';

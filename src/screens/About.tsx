@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { useCounter, useGlobalText, useNavigation, useRoute } from 'src/hooks';
-
 import Button from 'src/components/buttons/Button';
-import { type NavigationNames } from 'src/navigations/RootStackParamList';
+import {
+  type NavigationNames,
+  useNavigation,
+  useRoute,
+} from 'src/navigations/RootStackParamList';
+import { useCounter, useGlobalText } from 'src/stores/useStore';
 
 const About = (): React.JSX.Element => {
   const { count, decrease } = useCounter();

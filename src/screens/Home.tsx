@@ -6,7 +6,7 @@ import { NavigationNames, useNavigation } from 'src/navigations';
 import { useCounter, useGlobalText } from 'src/stores';
 import { Dimensions } from 'src/utils';
 
-import Button from 'src/components/buttons/Button';
+import { Button } from 'src/components/buttons';
 
 import './css/home.css';
 import ExpoLogo from 'assets/svgs/expo.svg';

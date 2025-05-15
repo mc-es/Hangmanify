@@ -6,13 +6,13 @@ import {
 } from '@react-navigation/native';
 
 export const enum NavigationNames {
-  HOME = 'Home',
   ABOUT = 'About',
+  HOME = 'Home',
 }
 
 export type RootStackParamList = {
-  [NavigationNames.HOME]: undefined;
   [NavigationNames.ABOUT]: { name: string };
+  [NavigationNames.HOME]: undefined;
 };
 
 export const useNavigation = (): NavigationProp<RootStackParamList> =>

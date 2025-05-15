@@ -17,13 +17,13 @@ const About = (): React.JSX.Element => {
       <Text>About</Text>
       <Text>{count}</Text>
       <Text>{route.params.name}</Text>
-      <Button onPress={decrease} text="Decreasement" />
-      <Button onPress={() => navigation.goBack()} text="Home" />
+      <Button text="Decreasement" onPress={decrease} />
+      <Button text="Home" onPress={() => navigation.goBack()} />
       <TextInput
-        onChangeText={(input: string) => setText(input)}
         placeholder="input"
         style={{ borderWidth: 1, width: '50%' }}
         value={text}
+        onChangeText={(input: string) => setText(input)}
       />
     </View>
   );
@@ -33,9 +33,9 @@ export default About;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1,
     gap: 10,
+    justifyContent: 'center',
   },
 });

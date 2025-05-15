@@ -4,8 +4,8 @@ import { COLORS } from './colors';
 import { FONTS } from './fonts';
 
 export const enum SYSTEM_THEME {
-  LIGHT = 'light',
   DARK = 'dark',
+  LIGHT = 'light',
 }
 
 const rawFontSizes = {
@@ -19,7 +19,6 @@ const rawFontSizes = {
   _32: 32,
   _48: 48,
 } satisfies Record<string, number>;
-
 const fontSizes = Object.entries(rawFontSizes).reduce(
   (acc, [key, value]) => {
     acc[key as keyof typeof rawFontSizes] = Dimensions.fs(value);
@@ -27,50 +26,46 @@ const fontSizes = Object.entries(rawFontSizes).reduce(
   },
   {} as Record<keyof typeof rawFontSizes, number>
 );
-
+type ColorFamily = (typeof COLORS)[keyof typeof COLORS];
+type ColorTone = ColorFamily[keyof ColorFamily];
 type CommonColors =
+  | 'danger'
+  | 'dark'
+  | 'info'
+  | 'light'
   | 'primary'
   | 'secondary'
   | 'success'
-  | 'danger'
-  | 'warning'
-  | 'info'
-  | 'light'
-  | 'dark';
-
-type ColorFamily = (typeof COLORS)[keyof typeof COLORS];
-type ColorTone = ColorFamily[keyof ColorFamily];
-
-interface Palette {
-  readonly background: ColorTone;
-  readonly text: ColorTone;
-}
+  | 'warning';
 
 interface FontTheme {
   readonly families: typeof FONTS;
   readonly sizes: typeof fontSizes;
 }
-
 interface GlobalTheme {
   color: Record<CommonColors, ColorTone>;
   font: FontTheme;
 }
+interface Palette {
+  readonly background: ColorTone;
+  readonly text: ColorTone;
+}
 
 export interface Theme {
-  palette: Palette;
   global: GlobalTheme;
+  palette: Palette;
 }
 
 const global: GlobalTheme = {
   color: {
+    danger: COLORS.RED._500,
+    dark: COLORS.ZINC._950,
+    info: COLORS.CYAN._500,
+    light: COLORS.ZINC._50,
     primary: COLORS.BLUE._500,
     secondary: COLORS.GRAY._500,
     success: COLORS.GREEN._500,
-    danger: COLORS.RED._500,
     warning: COLORS.YELLOW._500,
-    info: COLORS.CYAN._500,
-    light: COLORS.ZINC._50,
-    dark: COLORS.ZINC._950,
   },
   font: {
     families: FONTS,
@@ -79,17 +74,17 @@ const global: GlobalTheme = {
 };
 
 export const LightTheme: Theme = {
+  global,
   palette: {
     background: COLORS.GRAY._100,
     text: COLORS.GRAY._900,
   },
-  global,
 };
 
 export const DarkTheme: Theme = {
+  global,
   palette: {
     background: COLORS.GRAY._800,
     text: COLORS.GRAY._50,
   },
-  global,
 };

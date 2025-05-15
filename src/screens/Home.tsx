@@ -37,16 +37,16 @@ const Home = (): React.JSX.Element => {
         Nunito
       </Text>
       <Text>{count}</Text>
-      <Button onPress={increase} text="Increment" />
+      <Button text="Increment" onPress={increase} />
       <Button
-        onPress={() => navigation.navigate(NavigationNames.ABOUT, { name: 'can' })}
         text="About"
+        onPress={() => navigation.navigate(NavigationNames.ABOUT, { name: 'can' })}
       />
       <TextInput
-        onChangeText={(input: string) => setText(input)}
         placeholder="input"
         style={{ borderWidth: 1, width: '50%' }}
         value={text}
+        onChangeText={(input: string) => setText(input)}
       />
     </View>
   );

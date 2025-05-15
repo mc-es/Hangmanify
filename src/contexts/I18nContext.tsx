@@ -19,8 +19,8 @@ type I18nFunction = (
 
 interface I18nContextProps {
   readonly locale: AvailableLanguages;
-  readonly toggleI18n: (locale: AvailableLanguages) => void;
   readonly t: I18nFunction;
+  toggleI18n: (locale: AvailableLanguages) => void;
 }
 
 const getTranslation: I18nFunction = (key, options) => {
@@ -31,8 +31,8 @@ const getTranslation: I18nFunction = (key, options) => {
 
 const I18nContext = createContext<I18nContextProps>({
   locale: (LOCAL_UNITS.languageCode as AvailableLanguages) ?? LANGUAGE_CODES.EN,
-  toggleI18n: () => {},
   t: getTranslation,
+  toggleI18n: () => {},
 });
 
 export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -50,8 +50,8 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
   const contextValue = useMemo<I18nContextProps>(
     () => ({
       locale,
-      toggleI18n,
       t: getTranslation,
+      toggleI18n,
     }),
     [locale]
   );

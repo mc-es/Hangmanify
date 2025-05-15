@@ -8,7 +8,6 @@ export function getNestedValue<T>(obj: T, key: string): unknown {
     return null;
   }, obj as unknown);
 }
-
 export function interpolate(template: string, options: TranslateOptions): string {
   return template.replace(/{{\s*(\w+)\s*}}/g, (_match, key) =>
     key in options ? String(options[key]) : ''

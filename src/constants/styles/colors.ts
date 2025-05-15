@@ -11,7 +11,6 @@ enum AMBER {
   _900 = '#78350f',
   _950 = '#451a03',
 }
-
 enum BLUE {
   _50 = '#eff6ff',
   _100 = '#dbeafe',
@@ -25,7 +24,6 @@ enum BLUE {
   _900 = '#1e3a8a',
   _950 = '#172554',
 }
-
 enum CYAN {
   _50 = '#ecfeff',
   _100 = '#cffafe',
@@ -39,7 +37,6 @@ enum CYAN {
   _900 = '#164e63',
   _950 = '#083344',
 }
-
 enum EMERALD {
   _50 = '#ecfdf5',
   _100 = '#d1fae5',
@@ -53,7 +50,6 @@ enum EMERALD {
   _900 = '#064e3b',
   _950 = '#022c22',
 }
-
 enum FUCHSIA {
   _50 = '#fdf4ff',
   _100 = '#fae8ff',
@@ -67,7 +63,6 @@ enum FUCHSIA {
   _900 = '#701a75',
   _950 = '#4a044e',
 }
-
 enum GRAY {
   _50 = '#f9fafb',
   _100 = '#f3f4f6',
@@ -81,7 +76,6 @@ enum GRAY {
   _900 = '#111827',
   _950 = '#030712',
 }
-
 enum GREEN {
   _50 = '#f0fdf4',
   _100 = '#dcfce7',
@@ -95,7 +89,6 @@ enum GREEN {
   _900 = '#14532d',
   _950 = '#052e16',
 }
-
 enum INDIGO {
   _50 = '#eef2ff',
   _100 = '#e0e7ff',
@@ -109,7 +102,6 @@ enum INDIGO {
   _900 = '#312e81',
   _950 = '#1e1b4b',
 }
-
 enum LIME {
   _50 = '#f7fee7',
   _100 = '#ecfccb',
@@ -123,7 +115,6 @@ enum LIME {
   _900 = '#365314',
   _950 = '#1a2e05',
 }
-
 enum NEUTRAL {
   _50 = '#f9f9f9',
   _100 = '#f5f5f5',
@@ -137,7 +128,6 @@ enum NEUTRAL {
   _900 = '#171717',
   _950 = '#0a0a0a',
 }
-
 enum ORANGE {
   _50 = '#fff7ed',
   _100 = '#ffedd5',
@@ -151,7 +141,6 @@ enum ORANGE {
   _900 = '#7c2d12',
   _950 = '#431407',
 }
-
 enum PINK {
   _50 = '#fdf2f8',
   _100 = '#fce7f3',
@@ -165,7 +154,6 @@ enum PINK {
   _900 = '#831843',
   _950 = '#500724',
 }
-
 enum PURPLE {
   _50 = '#faf5ff',
   _100 = '#f3e8ff',
@@ -179,7 +167,6 @@ enum PURPLE {
   _900 = '#581c87',
   _950 = '#3b0764',
 }
-
 enum RED {
   _50 = '#fef2f2',
   _100 = '#fee2e2',
@@ -193,7 +180,6 @@ enum RED {
   _900 = '#7f1d1d',
   _950 = '#450a0a',
 }
-
 enum ROSE {
   _50 = '#fff1f2',
   _100 = '#ffe4e6',
@@ -207,7 +193,6 @@ enum ROSE {
   _900 = '#881337',
   _950 = '#4c0519',
 }
-
 enum SKY {
   _50 = '#f0f9ff',
   _100 = '#e0f2fe',
@@ -221,7 +206,6 @@ enum SKY {
   _900 = '#0c4a6e',
   _950 = '#082f49',
 }
-
 enum SLATE {
   _50 = '#f8fafc',
   _100 = '#f1f5f9',
@@ -235,7 +219,6 @@ enum SLATE {
   _900 = '#0f172a',
   _950 = '#020617',
 }
-
 enum STONE {
   _50 = '#fafaf9',
   _100 = '#f5f5f4',
@@ -249,7 +232,6 @@ enum STONE {
   _900 = '#1c1917',
   _950 = '#0c0a09',
 }
-
 enum TEAL {
   _50 = '#f0fdfa',
   _100 = '#ccfbf1',
@@ -263,7 +245,6 @@ enum TEAL {
   _900 = '#134e4a',
   _950 = '#042f2e',
 }
-
 enum VIOLET {
   _50 = '#f5f3ff',
   _100 = '#ede9fe',
@@ -277,7 +258,6 @@ enum VIOLET {
   _900 = '#4c1d95',
   _950 = '#2e1065',
 }
-
 enum YELLOW {
   _50 = '#fefce8',
   _100 = '#fef9c3',
@@ -291,7 +271,6 @@ enum YELLOW {
   _900 = '#713f12',
   _950 = '#422006',
 }
-
 enum ZINC {
   _50 = '#fafafa',
   _100 = '#f4f4f5',

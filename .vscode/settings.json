@@ -246,7 +246,7 @@
       "name": "custom-syncpack",
       "base": "syncpack",
       "color": "red-500",
-      "fileNames": ["helper.ts"]
+      "fileNames": ["helpers.ts"]
     },
     {
       "name": "custom-edge",

@@ -4,10 +4,10 @@ import Constants from 'expo-constants';
 import * as SplashScreen from 'expo-splash-screen';
 
 import Main from 'src/Main';
+import { LoadFonts } from 'src/utils';
 
 import { I18nProvider } from 'src/contexts/I18nContext';
 import { ThemeProvider } from 'src/contexts/ThemeContext';
-import { loadFonts } from 'src/utils/load-fonts';
 
 import './global.css';
 import * as Storybook from '.storybook';
@@ -25,7 +25,7 @@ const App = (): React.JSX.Element => {
 
     const prepare = async (): Promise<void> => {
       try {
-        await loadFonts();
+        await LoadFonts();
       } catch (error) {
         console.warn(error);
       } finally {

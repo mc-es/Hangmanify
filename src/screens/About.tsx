@@ -5,7 +5,7 @@ import type { NavigationNames } from 'src/navigations';
 import { useNavigation, useRoute } from 'src/navigations';
 import { useCounter, useGlobalText } from 'src/stores';
 
-import Button from 'src/components/buttons/Button';
+import { Button } from 'src/components/buttons';
 
 const About = (): React.JSX.Element => {
   const { count, decrease } = useCounter();

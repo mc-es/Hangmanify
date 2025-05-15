@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 
 import RootNavigation from './navigations/RootNavigation';
 
-import { useTheme } from './hooks';
+import { useTheme } from './contexts';
 
 const Main = (): React.JSX.Element => {
   const { theme } = useTheme();

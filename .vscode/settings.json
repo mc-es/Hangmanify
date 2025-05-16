@@ -75,7 +75,11 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "workbench.editor.tabSizing": "shrink",
   "editor.codeActionsOnSave": {
-    "source.fixAll": "always"
+    "source.fixAll": "always",
+    "source.organizeImports": "always",
+    "source.removeUnusedImports": "always",
+    "source.removeUnused.ts": "always",
+    "source.addMissingImports.ts": "always"
   },
   "editor.renderWhitespace": "all",
   "editor.scrollBeyondLastLine": false,
@@ -242,7 +246,7 @@
       "name": "custom-syncpack",
       "base": "syncpack",
       "color": "red-500",
-      "fileNames": ["helper.ts"]
+      "fileNames": ["helpers.ts"]
     },
     {
       "name": "custom-edge",
@@ -267,6 +271,12 @@
       "base": "tailwindcss",
       "color": "pink-400",
       "fileNames": ["tailwind.json", "tailwind.config.js"]
+    },
+    {
+      "name": "custom-knip",
+      "base": "knip",
+      "color": "teal-600",
+      "fileNames": ["dimensions.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [

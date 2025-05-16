@@ -1,16 +1,14 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
 
 import type { TranslateOptions } from 'i18n-js';
+import { Helpers } from 'src/utils';
 
-import i18n from 'src/constants/localization/i18n';
-import {
-  type AvailableLanguages,
-  type DotNotationKeys,
-  LANGUAGE_CODES,
-} from 'src/constants/localization/languages';
-import { LOCAL_UNITS } from 'src/constants/localization/local-units';
-import type { TranslationKeys } from 'src/constants/localization/translation-keys';
-import { getNestedValue, interpolate } from 'src/utils/helper';
+import type {
+  AvailableLanguages,
+  DotNotationKeys,
+  TranslationKeys,
+} from 'src/constants/localization';
+import { i18n, LANGUAGE_CODES, LOCAL_UNITS } from 'src/constants/localization';
 
 type I18nFunction = (
   key: DotNotationKeys<TranslationKeys>,
@@ -18,24 +16,26 @@ type I18nFunction = (
 ) => string;
 
 interface I18nContextProps {
-  locale: AvailableLanguages;
+  readonly locale: AvailableLanguages;
+  readonly t: I18nFunction;
   toggleI18n: (locale: AvailableLanguages) => void;
-  t: I18nFunction;
 }
 
 const getTranslation: I18nFunction = (key, options) => {
-  const translation = getNestedValue(i18n.translations[i18n.locale], key);
+  const translation = Helpers.getNestedValue(i18n.translations[i18n.locale], key);
   if (typeof translation !== 'string') return key;
-  return options ? interpolate(translation, options) : translation;
+  return options ? Helpers.interpolate(translation, options) : translation;
 };
 
 const I18nContext = createContext<I18nContextProps>({
   locale: (LOCAL_UNITS.languageCode as AvailableLanguages) ?? LANGUAGE_CODES.EN,
-  toggleI18n: () => {},
   t: getTranslation,
+  toggleI18n: () => {},
 });
 
-export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}): React.JSX.Element => {
   const [locale, setLocale] = useState<AvailableLanguages>(
     i18n.locale as AvailableLanguages
   );
@@ -46,11 +46,7 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const contextValue = useMemo<I18nContextProps>(
-    () => ({
-      locale,
-      toggleI18n,
-      t: getTranslation,
-    }),
+    () => ({ locale, t: getTranslation, toggleI18n }),
     [locale]
   );
 

@@ -25,15 +25,15 @@ const useStore = create<StoreState>()(
 );
 
 export const useCounter = (): CounterState => {
-  const { count, increase, decrease } = useStore<CounterState>(
+  const { count, decrease, increase } = useStore<CounterState>(
     useShallow((state: CounterState) => ({
       count: state.count,
-      increase: state.increase,
       decrease: state.decrease,
+      increase: state.increase,
     }))
   );
 
-  return { count, increase, decrease };
+  return { count, decrease, increase };
 };
 
 export const useGlobalText = (): GlobalTextState => {

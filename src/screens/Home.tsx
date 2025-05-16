@@ -1,32 +1,29 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 
-import {
-  useAppCounter,
-  useAppGlobalText,
-  useAppNavigation,
-  useAppTheme,
-} from 'src/hooks';
+import { useTheme } from 'src/contexts';
+import { NavigationNames, useNavigation } from 'src/navigations';
+import { useCounter, useGlobalText } from 'src/stores';
+import { Dimensions } from 'src/utils';
 
-import Button from 'src/components/buttons/Button';
-import { NavigationNames } from 'src/navigations/RootStackParamList';
+import { Button } from 'src/components/buttons';
 
 import './css/home.css';
 import ExpoLogo from 'assets/svgs/expo.svg';
 
 const Home = (): React.JSX.Element => {
-  const { count, increase } = useAppCounter();
-  const { text, setText } = useAppGlobalText();
-  const navigation = useAppNavigation();
-  const { theme } = useAppTheme();
+  const { count, increase } = useCounter();
+  const { text, setText } = useGlobalText();
+  const navigation = useNavigation();
+  const { theme } = useTheme();
 
   return (
     <View className="my_container" style={{ backgroundColor: theme.palette.background }}>
-      <ExpoLogo fill={'red'} height={60} width={60} />
+      <ExpoLogo fill={'red'} height={Dimensions.ms(60)} width={Dimensions.ms(60)} />
       <Text>Home</Text>
       <Text
         style={{
-          fontFamily: theme.global.font.families.poppins.bold,
+          fontFamily: theme.global.font.families.Poppins.Bold,
           fontSize: theme.global.font.sizes._24,
         }}
       >
@@ -35,22 +32,22 @@ const Home = (): React.JSX.Element => {
       <Text
         className="custom_text"
         style={{
-          fontFamily: theme.global.font.families.nunito.bold,
+          fontFamily: theme.global.font.families.Nunito.Bold,
         }}
       >
         Nunito
       </Text>
       <Text>{count}</Text>
-      <Button onPress={increase} text="Increment" />
+      <Button text="Increment" onPress={increase} />
       <Button
-        onPress={() => navigation.navigate(NavigationNames.ABOUT, { name: 'can' })}
         text="About"
+        onPress={() => navigation.navigate(NavigationNames.ABOUT, { name: 'can' })}
       />
       <TextInput
-        onChangeText={(input: string) => setText(input)}
         placeholder="input"
         style={{ borderWidth: 1, width: '50%' }}
         value={text}
+        onChangeText={(input: string) => setText(input)}
       />
     </View>
   );

@@ -6,17 +6,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 
 const meta = {
-  title: 'Button',
   component: Button,
-  argTypes: {
-    onPress: { action: 'pressed the button' },
-  },
+  title: 'Button',
   args: {
     text: 'Hello world',
   },
+  argTypes: {
+    onPress: { action: 'pressed the button' },
+  },
   decorators: [
     (Story): React.JSX.Element => (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ alignItems: 'center', flex: 1, justifyContent: 'center' }}>
         <Story />
       </View>
     ),

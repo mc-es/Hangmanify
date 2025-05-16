@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import perfectionist from 'eslint-plugin-perfectionist';
 import pluginReact from 'eslint-plugin-react';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
@@ -16,9 +17,10 @@ export default defineConfig([
     },
   },
   {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    plugins: { js, '@custom-typescript': customTsRules },
     extends: ['js/recommended'],
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    plugins: { '@custom-typescript': customTsRules, js, perfectionist },
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
@@ -47,21 +49,21 @@ export default defineConfig([
     rules: {
       //* custom rules
       '@custom-typescript/filename-match-component': 'error',
-      '@custom-typescript/jsx-sort-props': 'error',
+      // '@custom-typescript/jsx-sort-props': 'error',
       '@custom-typescript/require-try-catch-async': 'error',
       '@custom-typescript/require-usestate-type': 'error',
       '@custom-typescript/valid-translation-key': 'error',
-      '@custom-typescript/no-direct-hook-imports': [
-        'error',
-        {
-          allowedImports: [
-            'react',
-            'react-native',
-            'zustand/shallow',
-            '@react-navigation/native',
-          ],
-        },
-      ],
+      // '@custom-typescript/no-direct-hook-imports': [
+      //   'error',
+      //   {
+      //     allowedImports: [
+      //       'react',
+      //       'react-native',
+      //       'zustand/shallow',
+      //       '@react-navigation/native',
+      //     ],
+      //   },
+      // ],
 
       //- typescript rules
       '@typescript-eslint/consistent-type-exports': 'error',
@@ -78,28 +80,17 @@ export default defineConfig([
       '@typescript-eslint/no-require-imports': 'error',
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
       '@typescript-eslint/no-unsafe-assignment': 'error',
+      'arrow-body-style': ['error', 'as-needed'],
 
       //+ native eslint rules
-      semi: ['error', 'always'],
-      curly: ['error', 'multi-or-nest'],
-      eqeqeq: 'error',
-      yoda: 'error',
-      camelcase: [
-        'error',
-        {
-          properties: 'always',
-          ignoreDestructuring: true,
-          ignoreImports: true,
-          ignoreGlobals: true,
-        },
-      ],
-      'arrow-body-style': ['error', 'as-needed'],
       'block-scoped-var': 'error',
       'capitalized-comments': ['error', 'never'],
       'consistent-return': 'error',
+      curly: ['error', 'multi-or-nest'],
       'default-case': 'error',
       'default-case-last': 'error',
       'default-param-last': ['error'],
+      eqeqeq: 'error',
       'for-direction': 'error',
       'func-name-matching': ['error', 'never'],
       'func-names': ['error', 'as-needed'],
@@ -108,19 +99,27 @@ export default defineConfig([
       'logical-assignment-operators': ['error', 'always'],
       'no-alert': 'error',
       'no-array-constructor': 'error',
+      'no-await-in-loop': 'error',
       'no-bitwise': 'error',
       'no-case-declarations': 'error',
+      'no-compare-neg-zero': 'error',
+      'no-cond-assign': 'error',
       'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+      'no-constant-binary-expression': 'error',
       'no-delete-var': 'error',
+      'no-dupe-else-if': 'error',
+      'no-duplicate-case': 'error',
       'no-else-return': ['error', { allowElseIf: true }],
       'no-empty': ['error', { allowEmptyCatch: true }],
       'no-empty-function': ['error', { allow: ['arrowFunctions'] }],
       'no-eq-null': 'error',
       'no-eval': 'error',
+      'no-ex-assign': 'error',
       'no-extra-bind': 'error',
       'no-extra-boolean-cast': 'error',
       'no-labels': 'error',
       'no-lonely-if': 'error',
+      'no-loss-of-precision': 'error',
       'no-multi-str': 'error',
       'no-nested-ternary': 'error',
       'no-new-func': 'error',
@@ -129,22 +128,14 @@ export default defineConfig([
       'no-param-reassign': 'error',
       'no-shadow': 'error',
       'no-shadow-restricted-names': 'error',
+      'no-sparse-arrays': 'error',
+      'no-template-curly-in-string': 'error',
       'no-throw-literal': 'error',
       'no-undef-init': 'error',
       'no-undefined': 'error',
       'no-unneeded-ternary': 'error',
-      'no-var': 'error',
-      'no-await-in-loop': 'error',
-      'no-compare-neg-zero': 'error',
-      'no-cond-assign': 'error',
-      'no-constant-binary-expression': 'error',
-      'no-dupe-else-if': 'error',
-      'no-duplicate-case': 'error',
-      'no-ex-assign': 'error',
-      'no-loss-of-precision': 'error',
-      'no-sparse-arrays': 'error',
-      'no-template-curly-in-string': 'error',
       'no-unsafe-finally': 'error',
+      'no-var': 'error',
       'prefer-exponentiation-operator': 'error',
       'prefer-object-has-own': 'error',
       'prefer-object-spread': 'error',
@@ -153,9 +144,131 @@ export default defineConfig([
       'prefer-spread': 'error',
       'prefer-template': 'error',
       'require-await': 'error',
+      semi: ['error', 'always'],
       'sort-vars': 'error',
       'use-isnan': 'error',
       'valid-typeof': 'error',
+      yoda: 'error',
+      camelcase: [
+        'error',
+        {
+          ignoreDestructuring: true,
+          ignoreGlobals: true,
+          ignoreImports: true,
+          properties: 'always',
+        },
+      ],
+
+      //! perfectionist rules
+      'perfectionist/sort-enums': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          order: 'asc',
+          type: 'natural',
+        },
+      ],
+      'perfectionist/sort-interfaces': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          groupKind: 'required-first',
+          groups: ['unknown', 'method', 'multiline-member'],
+          order: 'asc',
+          type: 'alphabetical',
+        },
+      ],
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          groups: ['shorthand-prop', 'unknown', 'multiline-prop', 'callback'],
+          order: 'asc',
+          type: 'alphabetical',
+          customGroups: [
+            {
+              elementNamePattern: '^on.+',
+              groupName: 'callback',
+            },
+          ],
+        },
+      ],
+      'perfectionist/sort-modules': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          newlinesBetween: 'always',
+          order: 'asc',
+          type: 'alphabetical',
+          groups: [
+            'enum',
+            'export-enum',
+            'type',
+            'export-type',
+            'interface',
+            'export-interface',
+            'function',
+            'export-function',
+          ],
+        },
+      ],
+      'perfectionist/sort-object-types': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          groupKind: 'required-first',
+          groups: ['unknown', 'method', 'multiline-member'],
+          order: 'asc',
+          type: 'alphabetical',
+        },
+      ],
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          groups: ['unknown', 'method', 'multiline-member', 'state'],
+          order: 'asc',
+          type: 'alphabetical',
+          customGroups: [
+            {
+              elementNamePattern: '^set[A-Z].*$',
+              groupName: 'state',
+              selector: 'property',
+            },
+          ],
+        },
+      ],
+      'perfectionist/sort-switch-case': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          order: 'asc',
+          type: 'alphabetical',
+        },
+      ],
+      'perfectionist/sort-union-types': [
+        'error',
+        {
+          fallbackSort: { type: 'unsorted' },
+          order: 'asc',
+          type: 'alphabetical',
+          groups: [
+            'conditional',
+            'function',
+            'import',
+            'intersection',
+            'keyword',
+            'literal',
+            'named',
+            'object',
+            'operator',
+            'tuple',
+            'union',
+            'nullish',
+            'unknown',
+          ],
+        },
+      ],
     },
   },
 ]);

@@ -2,7 +2,10 @@ import * as Font from 'expo-font';
 
 import { APP_FONTS } from 'assets/fonts';
 
-import { FONTS } from 'src/constants/styles';
+// don't import from '../styles' here — it causes a circular dependency:
+// themes.ts → styles/index.ts → load-fonts.ts → themes.ts
+// instead, import directly from specific files like '../styles/fonts'
+import { FONTS } from 'src/constants/styles/fonts';
 
 export const LoadFonts = async (): Promise<void> => {
   try {

@@ -2,12 +2,12 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import type { ColorSchemeName } from 'react-native';
 import { useColorScheme } from 'react-native';
 
-import type { Theme } from 'src/constants/styles/themes';
-import { DarkTheme, LightTheme, SYSTEM_THEME } from 'src/constants/styles/themes';
+import type { Theme } from 'src/constants/styles';
+import { DarkTheme, LightTheme, SYSTEM_THEME } from 'src/constants/styles';
 
 interface ThemeContextProps {
-  system: SYSTEM_THEME;
-  theme: Theme;
+  readonly system: SYSTEM_THEME;
+  readonly theme: Theme;
   toggleTheme: () => void;
 }
 
@@ -19,12 +19,14 @@ const ThemeContext = createContext<ThemeContextProps>({
 
 const getThemeAndSystem = (
   scheme: ColorSchemeName
-): { theme: Theme; system: SYSTEM_THEME } => ({
-  theme: scheme === SYSTEM_THEME.DARK ? DarkTheme : LightTheme,
+): { system: SYSTEM_THEME; theme: Theme } => ({
   system: scheme === SYSTEM_THEME.DARK ? SYSTEM_THEME.DARK : SYSTEM_THEME.LIGHT,
+  theme: scheme === SYSTEM_THEME.DARK ? DarkTheme : LightTheme,
 });
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}): React.JSX.Element => {
   const systemColorScheme = useColorScheme();
   const computedSystem = getThemeAndSystem(systemColorScheme).system;
   const [theme, setTheme] = useState<Theme>(getThemeAndSystem(systemColorScheme).theme);

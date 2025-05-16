@@ -1,6 +1,6 @@
 import type { TranslateOptions } from 'i18n-js';
 
-export function getNestedValue<T>(obj: T, key: string): unknown {
+function getNestedValue<T>(obj: T, key: string): unknown {
   return key.split('.').reduce((acc: unknown, curr: string): unknown => {
     if (acc !== null && typeof acc === 'object' && curr in acc)
       return (acc as Record<string, unknown>)[curr];
@@ -8,9 +8,10 @@ export function getNestedValue<T>(obj: T, key: string): unknown {
     return null;
   }, obj as unknown);
 }
-
-export function interpolate(template: string, options: TranslateOptions): string {
+function interpolate(template: string, options: TranslateOptions): string {
   return template.replace(/{{\s*(\w+)\s*}}/g, (_match, key) =>
     key in options ? String(options[key]) : ''
   );
 }
+
+export const Helpers = { getNestedValue, interpolate };

@@ -1,19 +1,19 @@
 import type { ExpoConfig } from '@expo/config';
 
 const getSplashConfig = (): ExpoConfig['splash'] => ({
+  backgroundColor: '#F5F5F5',
   image: './assets/images/splash-icon-dark.png',
   resizeMode: 'contain',
-  backgroundColor: '#F5F5F5',
 });
 
 const getAndroidConfig = (): ExpoConfig['android'] => ({
-  adaptiveIcon: {
-    foregroundImage: './assets/icons/android/adaptive-icon.png',
-    backgroundImage: './assets/icons/android/adaptive-icon.png',
-    monochromeImage: './assets/icons/android/adaptive-icon.png',
-    backgroundColor: '#151718',
-  },
   package: 'com.mces58.hangmanify',
+  adaptiveIcon: {
+    backgroundColor: '#151718',
+    backgroundImage: './assets/icons/android/adaptive-icon.png',
+    foregroundImage: './assets/icons/android/adaptive-icon.png',
+    monochromeImage: './assets/icons/android/adaptive-icon.png',
+  },
 });
 
 const getIosConfig = (): ExpoConfig['ios'] => ({
@@ -25,19 +25,19 @@ const getIosConfig = (): ExpoConfig['ios'] => ({
 });
 
 const getWebConfig = (): ExpoConfig['web'] => ({
-  favicon: './assets/icons/web/favicon.png',
   bundler: 'metro',
+  favicon: './assets/icons/web/favicon.png',
 });
 
 const splashScreenPlugin: [string, Record<string, unknown>] = [
   'expo-splash-screen',
   {
+    backgroundColor: '#F5F5F5',
     image: './assets/images/splash-icon-dark.png',
     resizeMode: 'contain',
-    backgroundColor: '#F5F5F5',
     dark: {
-      image: './assets/images/splash-icon-light.png',
       backgroundColor: '#151718',
+      image: './assets/images/splash-icon-light.png',
     },
   },
 ];
@@ -62,12 +62,12 @@ const fontPlugin: [string, Record<string, unknown>] = [
 
 export default ({ config }: { config: ExpoConfig }): ExpoConfig => ({
   ...config,
-  name: process.env.STORYBOOK_ENABLED ? 'Hangmanify Storybook' : config.name,
-  splash: getSplashConfig(),
   android: getAndroidConfig(),
   ios: getIosConfig(),
-  web: getWebConfig(),
+  name: process.env.STORYBOOK_ENABLED ? 'Hangmanify Storybook' : config.name,
   plugins: ['expo-localization', splashScreenPlugin, fontPlugin],
+  splash: getSplashConfig(),
+  web: getWebConfig(),
   extra: {
     ...config.extra,
     storybookEnabled: process.env.STORYBOOK_ENABLED as boolean,

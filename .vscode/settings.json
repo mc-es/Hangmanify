@@ -77,8 +77,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.organizeImports": "always",
-    "source.removeUnusedImports": "always",
-    "source.removeUnused.ts": "always",
+    // "source.removeUnusedImports": "always",
+    // "source.removeUnused.ts": "always",
     "source.addMissingImports.ts": "always"
   },
   "editor.renderWhitespace": "all",
@@ -155,10 +155,18 @@
       "backgroundColor": "#98C379",
       "bold": false,
       "italic": true
+    },
+    {
+      "tag": "#",
+      "color": "#000",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#670D2F",
+      "bold": false,
+      "italic": true
     }
   ],
   "hediet.vscode-drawio.resizeImages": null,
-  "sonarlint.focusOnNewCode": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "css.customData": [".vscode/tailwind.json"],
   //- This setting has an application scope and can be set only in the user settings file.
@@ -277,6 +285,30 @@
       "base": "knip",
       "color": "teal-600",
       "fileNames": ["dimensions.ts"]
+    },
+    {
+      "name": "custom-toml",
+      "base": "toml",
+      "color": "orange-600",
+      "fileNames": ["types.ts"]
+    },
+    {
+      "name": "custom-robot",
+      "base": "robot",
+      "color": "green-300",
+      "fileNames": ["functions.ts"]
+    },
+    {
+      "name": "custom-hurl",
+      "base": "hurl",
+      "color": "yellow-300",
+      "fileNames": ["hooks.ts"]
+    },
+    {
+      "name": "custom-proto",
+      "base": "proto",
+      "color": "red-600",
+      "fileNames": ["initial.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [

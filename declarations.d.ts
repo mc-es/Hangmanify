@@ -10,3 +10,8 @@ declare module '*.svg' {
   const content: React.FC<SvgProps>;
   export default content;
 }
+
+declare module '*.mp4' {
+  const content: number | string;
+  export default content;
+}

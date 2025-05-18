@@ -7,17 +7,17 @@
     "start:storybook": "cross-env STORYBOOK_ENABLED=true expo start --reset-cache",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
     "format:lint": "eslint .",
     "format:prettier": "prettier . --write",
-    "prepare": "husky",
-    "storybook-generate": "sb-rn-get-stories",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "docz:serve": "docz serve",
-    "install-vscode-extensions": "cd .vscode && chmod +x install && ./install",
-    "check-deps": "yarn expo install --check",
-    "expo-doctor": "npx expo-doctor@latest"
+    "check:ts": "tsc",
+    "check:deps": "expo install --check",
+    "check:expo": "npx expo-doctor@latest .",
+    "prepare": "husky",
+    "storybook-generate": "sb-rn-get-stories",
+    "install-vscode-extensions": "cd .vscode && chmod +x install && ./install"
   },
   "engines": {
     "node": ">=22",

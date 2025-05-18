@@ -48,6 +48,7 @@ interface GlobalTheme {
 }
 interface Palette {
   readonly background: ColorTone;
+  readonly shadow: ColorTone;
   readonly text: ColorTone;
 }
 
@@ -77,6 +78,7 @@ export const LightTheme: Theme = {
   global,
   palette: {
     background: COLORS.GRAY._100,
+    shadow: COLORS.GRAY._900,
     text: COLORS.GRAY._900,
   },
 };
@@ -85,6 +87,7 @@ export const DarkTheme: Theme = {
   global,
   palette: {
     background: COLORS.GRAY._800,
+    shadow: COLORS.GRAY._50,
     text: COLORS.GRAY._50,
   },
 };

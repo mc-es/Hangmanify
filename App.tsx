@@ -5,7 +5,8 @@ import * as SplashScreen from 'expo-splash-screen';
 
 import { I18nProvider, ThemeProvider } from 'src/contexts';
 import Main from 'src/Main';
-import { LoadFonts } from 'src/utils';
+
+import { LoadFonts } from 'src/utils/load-fonts';
 
 import './global.css';
 import * as Storybook from '.storybook';

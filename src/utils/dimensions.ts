@@ -66,8 +66,9 @@ const hs = (size: number): number => (deviceWidth / guidelineBaseWidth) * size *
 const vs = (size: number): number => (deviceHeight / guidelineBaseHeight) * size;
 
 // width & height percent
-const wp = (percent: number): number => (deviceWidth * percent) / 100;
-const hp = (percent: number): number => (deviceHeight * percent) / 100;
+const clampPercent = (percent: number): number => Math.max(0, Math.min(100, percent));
+const wp = (percent: number): number => (deviceWidth * clampPercent(percent)) / 100;
+const hp = (percent: number): number => (deviceHeight * clampPercent(percent)) / 100;
 
 // moderate scale
 const ms = (size: number, factor = 0.5): number => size + (hs(size) - size) * factor;

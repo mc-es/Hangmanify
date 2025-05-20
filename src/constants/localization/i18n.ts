@@ -7,10 +7,7 @@ import { LOCAL_UNITS } from './local-units';
 import tr from './tr.json';
 import type { TranslationKeys } from './translation-keys';
 
-const translations: Record<AvailableLanguages, TranslationKeys> = {
-  en,
-  tr,
-};
+const translations: Record<AvailableLanguages, TranslationKeys> = { en, tr };
 
 const i18n = new I18n(translations);
 

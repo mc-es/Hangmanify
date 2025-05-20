@@ -7,7 +7,7 @@ import { APP_FONTS } from 'assets/fonts';
 // instead, import directly from specific files like '../styles/fonts'
 import { FONTS } from 'src/constants/styles/fonts';
 
-export const LoadFonts = async (): Promise<void> => {
+export const loadFonts = async (): Promise<void> => {
   try {
     await Font.loadAsync({
       [FONTS.Nunito.Bold]: APP_FONTS.nunito.bold,

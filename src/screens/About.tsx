@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-import type { NavigationNames } from 'src/navigations';
+import type { RouteNames } from 'src/navigations';
 import { useNavigation, useRoute } from 'src/navigations';
 import { useCounter, useGlobalText } from 'src/stores';
 
@@ -11,7 +11,7 @@ const About = (): React.JSX.Element => {
   const { count, decrease } = useCounter();
   const { text, setText } = useGlobalText();
   const navigation = useNavigation();
-  const route = useRoute<NavigationNames.ABOUT>();
+  const route = useRoute<RouteNames.ABOUT>();
 
   return (
     <View style={styles.container}>

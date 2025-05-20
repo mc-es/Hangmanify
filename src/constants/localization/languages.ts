@@ -7,7 +7,7 @@ export const enum LANGUAGE_NAMES {
   TURKISH = 'Türkçe',
 }
 
-type Prev = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+type DepthSteps = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export type AvailableLanguages = (typeof LANGUAGE_CODES)[keyof typeof LANGUAGE_CODES]; //- 'en' | 'tr'
 export type DotNotationKeys<T, D extends number = 5> = [D] extends [never]
@@ -15,7 +15,7 @@ export type DotNotationKeys<T, D extends number = 5> = [D] extends [never]
   : T extends object
     ? {
         [K in keyof T & (number | string)]: T[K] extends object
-          ? `${K}.${DotNotationKeys<T[K], Prev[D]>}` | `${K}`
+          ? `${K}.${DotNotationKeys<T[K], DepthSteps[D]>}` | `${K}`
           : `${K}`;
       }[keyof T & (number | string)]
     : never;

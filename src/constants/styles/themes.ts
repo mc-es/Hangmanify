@@ -1,4 +1,4 @@
-import { Dimensions } from 'src/utils';
+import { dimensions } from 'src/utils';
 
 import { COLORS } from './colors';
 import { FONTS } from './fonts';
@@ -21,7 +21,7 @@ const rawFontSizes = {
 } satisfies Record<string, number>;
 const fontSizes = Object.entries(rawFontSizes).reduce(
   (acc, [key, value]) => {
-    acc[key as keyof typeof rawFontSizes] = Dimensions.fs(value);
+    acc[key as keyof typeof rawFontSizes] = dimensions.fs(value);
     return acc;
   },
   {} as Record<keyof typeof rawFontSizes, number>

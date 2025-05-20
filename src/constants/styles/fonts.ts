@@ -1,11 +1,11 @@
-enum NunitoFont {
+enum Nunito {
   Bold = 'Nunito-Bold',
   Light = 'Nunito-Light',
   Medium = 'Nunito-Medium',
   Regular = 'Nunito-Regular',
   SemiBold = 'Nunito-SemiBold',
 }
-enum PoppinsFont {
+enum Poppins {
   Bold = 'Poppins-Bold',
   Light = 'Poppins-Light',
   Medium = 'Poppins-Medium',
@@ -13,7 +13,4 @@ enum PoppinsFont {
   SemiBold = 'Poppins-SemiBold',
 }
 
-export const FONTS = {
-  Nunito: NunitoFont,
-  Poppins: PoppinsFont,
-} as const;
+export const FONTS = { Nunito, Poppins } as const;

@@ -7,22 +7,22 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import About from 'src/screens/About';
 import Home from 'src/screens/Home';
 
-import { NavigationNames, type RootStackParamList } from './RootStackParamList';
+import { type RootStackParamList, RouteNames } from './RootStackParamList';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const RootNavigation = (): React.JSX.Element => (
+const AppNavigation = (): React.JSX.Element => (
   <SafeAreaProvider>
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={NavigationNames.HOME}
+        initialRouteName={RouteNames.HOME}
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen component={Home} name={NavigationNames.HOME} />
-        <Stack.Screen component={About} name={NavigationNames.ABOUT} />
+        <Stack.Screen component={Home} name={RouteNames.HOME} />
+        <Stack.Screen component={About} name={RouteNames.ABOUT} />
       </Stack.Navigator>
     </NavigationContainer>
   </SafeAreaProvider>
 );
 
-export default RootNavigation;
+export default AppNavigation;

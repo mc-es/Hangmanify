@@ -1,6 +1,6 @@
-import { Dimensions as NativeDimensions, PixelRatio } from 'react-native';
+import { Dimensions, PixelRatio } from 'react-native';
 
-const { height: deviceHeight, width: deviceWidth } = NativeDimensions.get('window');
+const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 
 const guidelineBaseWidth = 375;
 const guidelineBaseHeight = 812;
@@ -79,4 +79,4 @@ const fs = (size: number): number => {
   return Math.round(PixelRatio.roundToNearestPixel(hs(size) * fontScale));
 };
 
-export const Dimensions = { fs, hp, hs, ms, vs, wp };
+export const dimensions = { fs, hp, hs, ms, vs, wp };

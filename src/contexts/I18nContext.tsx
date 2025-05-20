@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
 
 import type { TranslateOptions } from 'i18n-js';
-import { Helpers } from 'src/utils';
+import { helpers } from 'src/utils';
 
 import type {
   AvailableLanguages,
@@ -10,21 +10,21 @@ import type {
 } from 'src/constants/localization';
 import { i18n, LANGUAGE_CODES, LOCAL_UNITS } from 'src/constants/localization';
 
-type I18nFunction = (
+type TranslateFunction = (
   key: DotNotationKeys<TranslationKeys>,
   options?: TranslateOptions
 ) => string;
 
 interface I18nContextProps {
   readonly locale: AvailableLanguages;
-  readonly t: I18nFunction;
+  readonly t: TranslateFunction;
   toggleI18n: (locale: AvailableLanguages) => void;
 }
 
-const getTranslation: I18nFunction = (key, options) => {
-  const translation = Helpers.getNestedValue(i18n.translations[i18n.locale], key);
+const getTranslation: TranslateFunction = (key, options) => {
+  const translation = helpers.getNestedValue(i18n.translations[i18n.locale], key);
   if (typeof translation !== 'string') return key;
-  return options ? Helpers.interpolate(translation, options) : translation;
+  return options ? helpers.interpolate(translation, options) : translation;
 };
 
 const I18nContext = createContext<I18nContextProps>({

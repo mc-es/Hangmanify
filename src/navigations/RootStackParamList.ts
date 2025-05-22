@@ -15,10 +15,24 @@ export type RootStackParamList = {
   [RouteNames.HOME]: undefined;
 };
 
-export const useNavigation = (): NavigationProp<RootStackParamList> =>
-  useNativeNavigation<NavigationProp<RootStackParamList>>();
-
-export const useRoute = <T extends keyof RootStackParamList>(): RouteProp<
+function useNavigation(): never;
+function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<
   RootStackParamList,
   T
-> => useNativeRoute<RouteProp<RootStackParamList, T>>();
+>;
+function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<
+  RootStackParamList,
+  T
+> {
+  return useNativeNavigation<NavigationProp<RootStackParamList, T>>();
+}
+function useRoute(): never;
+function useRoute<T extends keyof RootStackParamList>(): RouteProp<RootStackParamList, T>;
+function useRoute<T extends keyof RootStackParamList>(): RouteProp<
+  RootStackParamList,
+  T
+> {
+  return useNativeRoute<RouteProp<RootStackParamList, T>>();
+}
+
+export { useNavigation, useRoute };

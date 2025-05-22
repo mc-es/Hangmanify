@@ -11,10 +11,10 @@ import type { VideoProps } from './types';
 
 /**
  * ### Custom Video component built on top of expo-video.
- * @param {VideoProps} props VideoProps
- * @return {*}  {React.JSX.Element}
+ * @param props Props for configuring the Video component.
+ * @returns Rendered Video JSX element.
  */
-const Video: React.FC<VideoProps> = (props: VideoProps): React.JSX.Element => {
+const Video: React.FC<Readonly<VideoProps>> = (props): React.JSX.Element => {
   const {
     autoPlay,
     contentFit,
@@ -80,11 +80,13 @@ const Video: React.FC<VideoProps> = (props: VideoProps): React.JSX.Element => {
           />
           {shouldShowThumbnail && (
             <Pressable style={StyleSheet.absoluteFill} onPress={handlePress}>
-              <Image
-                resizeMode="cover"
-                source={{ uri: generatedThumbnailUri.uri! }}
-                style={[StyleSheet.absoluteFill, size]}
-              />
+              {generatedThumbnailUri.uri && (
+                <Image
+                  resizeMode="cover"
+                  source={{ uri: generatedThumbnailUri.uri }}
+                  style={[StyleSheet.absoluteFill, size]}
+                />
+              )}
             </Pressable>
           )}
           {shouldPlayOnPress && !showControls && !shouldShowThumbnail && (

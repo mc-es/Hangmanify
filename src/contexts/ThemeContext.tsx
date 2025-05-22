@@ -40,11 +40,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const contextValue = useMemo<ThemeContextProps>(
-    () => ({
-      system: currentSystem,
-      theme,
-      toggleTheme,
-    }),
+    () => ({ system: currentSystem, theme, toggleTheme }),
     [currentSystem, theme]
   );
 

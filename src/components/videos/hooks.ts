@@ -9,8 +9,8 @@ interface LoadVideo {
   request: {
     source: number | string;
   };
-  readonly response: {
-    uri: string | null;
+  response: {
+    readonly uri: string | null;
   };
 }
 interface Thumbnail {
@@ -19,8 +19,8 @@ interface Thumbnail {
     time: number;
     uri: string | null;
   };
-  readonly response: {
-    uri: string | null;
+  response: {
+    readonly uri: string | null;
   };
 }
 interface VideoPlayer {
@@ -35,8 +35,8 @@ interface VideoPlayer {
     };
     onPlay?: () => void;
   };
-  readonly response: {
-    player: ExpoVideoPlayer;
+  response: {
+    readonly player: ExpoVideoPlayer;
   };
 }
 
@@ -133,11 +133,17 @@ const useVideoPlayer = ({
         onPlay?.();
       }
     },
-    [config, onPlay]
+    [
+      config.autoPlay,
+      config.initialPosition,
+      config.loop,
+      config.muted,
+      config.volume,
+      onPlay,
+    ]
   );
 
   const player = useExpoVideoPlayer(source, initializePlayer);
-
   return { player };
 };
 

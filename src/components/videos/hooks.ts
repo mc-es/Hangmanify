@@ -51,13 +51,10 @@ const useLoadVideo = ({ source }: LoadVideo['request']): LoadVideo['response'] =
   useEffect((): (() => void) => {
     let isActive = true;
 
+    // @safe
     const loadVideo = async (): Promise<void> => {
-      try {
-        const result = await loadVideoAsset({ source });
-        if (isActive && result) setVideoUri(result.uri);
-      } catch (error) {
-        console.error(error);
-      }
+      const result = await loadVideoAsset({ source });
+      if (isActive && result) setVideoUri(result.uri);
     };
 
     loadVideo();
@@ -85,16 +82,12 @@ const useThumbnail = ({
   useEffect((): (() => void) => {
     let isActive = true;
 
+    // @safe
     const generate = async (): Promise<void> => {
       if (!enabled || !uri) return;
 
-      try {
-        const results = await generateThumbnail({ time: Math.max(0, time) * 1000, uri });
-        if (isActive && results) setThumbnailUri(results.uri);
-      } catch (error) {
-        console.error(error);
-        if (isActive) setThumbnailUri(null);
-      }
+      const results = await generateThumbnail({ time: Math.max(0, time) * 1000, uri });
+      if (isActive && results) setThumbnailUri(results.uri);
     };
 
     generate();

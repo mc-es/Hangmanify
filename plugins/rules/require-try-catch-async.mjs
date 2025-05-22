@@ -5,7 +5,7 @@ export default {
     type: 'problem',
     docs: {
       description:
-        'Enforces that all async functions include error handling using a try/catch block.',
+        'Enforces that async functions include error handling with try/catch, unless marked with @safe.',
       category: 'Error Handling',
       recommended: false,
     },
@@ -40,20 +40,20 @@ export default {
     }
 
     function checkAsyncFunction(node) {
-      if (!node.async) return;
+      if (!node.async || node.body?.type !== 'BlockStatement') return;
 
-      if (node.body.type !== 'BlockStatement') {
+      const sourceCode = context.getSourceCode();
+      const parentNode =
+        node.parent?.type === 'VariableDeclarator' ? node.parent.parent : node;
+      const comments = sourceCode.getCommentsBefore(parentNode);
+      const isSafe = comments.some((comment) => comment.value.trim().startsWith('@safe'));
+      const hasTry = containsTryStatement(node.body);
+
+      if (!hasTry && !isSafe) {
         context.report({
           node,
-          message: 'Async functions must include error handling using a try/catch block.',
-        });
-        return;
-      }
-
-      if (!containsTryStatement(node.body)) {
-        context.report({
-          node,
-          message: 'Async functions must include error handling using a try/catch block.',
+          message:
+            'Async functions must include try/catch or be marked with @safe above the function.',
         });
       }
     }

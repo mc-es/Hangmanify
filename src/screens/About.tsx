@@ -10,7 +10,7 @@ import { Button } from 'src/components/buttons';
 const About = (): React.JSX.Element => {
   const { count, decrease } = useCounter();
   const { text, setText } = useGlobalText();
-  const navigation = useNavigation();
+  const navigation = useNavigation<RouteNames.ABOUT>();
   const route = useRoute<RouteNames.ABOUT>();
 
   return (

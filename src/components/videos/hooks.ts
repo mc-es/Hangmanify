@@ -119,8 +119,8 @@ const useVideoPlayer = ({
       play.loop = config.loop;
       play.muted = config.muted;
       play.volume = Math.min(1, Math.max(0, config.volume));
+      play.currentTime = Math.max(0, config.initialPosition);
 
-      if (config.initialPosition > 0) play.currentTime = config.initialPosition;
       if (config.autoPlay) {
         play.play();
         onPlay?.();

@@ -14,7 +14,7 @@ import ExpoLogo from 'assets/svgs/expo.svg';
 const Home = (): React.JSX.Element => {
   const { count, increase } = useCounter();
   const { text, setText } = useGlobalText();
-  const navigation = useNavigation();
+  const navigation = useNavigation<RouteNames.HOME>();
   const { theme } = useTheme();
 
   return (

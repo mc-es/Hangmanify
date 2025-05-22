@@ -6,19 +6,19 @@ interface GenerateThumbnail {
     time: number;
     uri: string;
   };
-  readonly response: {
-    height: number;
-    uri: string;
-    width: number;
-  } | null;
+  response: {
+    readonly height: number;
+    readonly uri: string;
+    readonly width: number;
+  };
 }
 interface LoadVideoAsset {
   request: {
     source: number | string;
   };
-  readonly response: {
-    uri: string | null;
-  } | null;
+  response: {
+    readonly uri: string | null;
+  };
 }
 
 /**
@@ -29,7 +29,7 @@ interface LoadVideoAsset {
 const generateThumbnail = async ({
   time,
   uri,
-}: GenerateThumbnail['request']): Promise<GenerateThumbnail['response']> => {
+}: GenerateThumbnail['request']): Promise<GenerateThumbnail['response'] | null> => {
   try {
     const result = await VideoThumbnails.getThumbnailAsync(uri, { time });
     return { height: result.height, uri: result.uri, width: result.width };
@@ -46,7 +46,7 @@ const generateThumbnail = async ({
  */
 const loadVideoAsset = async ({
   source,
-}: LoadVideoAsset['request']): Promise<LoadVideoAsset['response']> => {
+}: LoadVideoAsset['request']): Promise<LoadVideoAsset['response'] | null> => {
   try {
     const asset = Asset.fromModule(source);
     await asset.downloadAsync();

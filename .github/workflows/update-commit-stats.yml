@@ -1,0 +1,38 @@
+# NOTE:
+# This workflow commits and pushes changes to the repository.
+# Make sure "Workflow permissions" are set to:
+# → Repo Settings > Actions > General > Workflow permissions
+# → ✅ "Read and write permissions"
+
+name: Update Weekly Commit Stats
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Runs every Monday at 08:00 UTC (11:00 Turkey time)
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Make script executable
+        run: chmod +x scripts/update-commit-stats.sh
+      - name: Run stats update script
+        run: ./scripts/update-commit-stats.sh
+      - name: Commit and push changes if needed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git add .husky/README.md
+            git commit -m "chore(docs): update weekly commit stats"
+            git push origin dev
+          fi

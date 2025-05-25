@@ -339,6 +339,13 @@
       "color": "green-500",
       "folderNames": ["poppins", "nunito"],
       "rootFolderNames": ["src"]
+    },
+    {
+      "name": "custom-docs",
+      "base": "docs",
+      "color": "teal-400",
+      "folderNames": ["guides"],
+      "rootFolderNames": ["."]
     }
   ]
 }

@@ -10,16 +10,17 @@ export default {
         'Enforces that the file name exactly matches the default exported React component name in PascalCase.',
       category: 'Stylistic Issues',
       recommended: false,
+      url: 'https://github.com/mces58/Hangmanify/blob/master/plugins/guides/filename-match-component.md',
     },
     schema: [],
   },
 
   create(context) {
-    const filename = context.getFilename();
+    const filename = context.getFilename().replace(/\\/g, '/');
+    if (!filename.includes('/components/')) return {};
     if (filename.includes('.stories.')) return {};
 
     const baseFilename = path.basename(filename, path.extname(filename));
-
     if (baseFilename.toLowerCase() === 'index') return {};
 
     return {

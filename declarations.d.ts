@@ -1,4 +1,3 @@
-/* eslint-disable @custom-typescript/filename-match-component */
 declare module '*.ttf' {
   import type { FontSource } from 'expo-font';
   const content: FontSource;

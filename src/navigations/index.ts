@@ -1,3 +1,3 @@
-import { NavigationNames, useNavigation, useRoute } from './RootStackParamList';
+import { RouteNames, useNavigation, useRoute } from './RootStackParamList';
 
-export { NavigationNames, useNavigation, useRoute };
+export { RouteNames, useNavigation, useRoute };

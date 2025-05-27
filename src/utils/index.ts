@@ -1,4 +1,4 @@
-import { Dimensions } from './dimensions';
-import { Helpers } from './helpers';
+import { dimensions } from './dimensions';
+import { helpers } from './helpers';
 
-export { Dimensions, Helpers };
+export { dimensions, helpers };

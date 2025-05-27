@@ -9,8 +9,8 @@ interface LoadVideo {
   request: {
     source: number | string;
   };
-  readonly response: {
-    uri: string | null;
+  response: {
+    readonly uri: string | null;
   };
 }
 interface Thumbnail {
@@ -19,8 +19,8 @@ interface Thumbnail {
     time: number;
     uri: string | null;
   };
-  readonly response: {
-    uri: string | null;
+  response: {
+    readonly uri: string | null;
   };
 }
 interface VideoPlayer {
@@ -35,8 +35,8 @@ interface VideoPlayer {
     };
     onPlay?: () => void;
   };
-  readonly response: {
-    player: ExpoVideoPlayer;
+  response: {
+    readonly player: ExpoVideoPlayer;
   };
 }
 
@@ -51,13 +51,10 @@ const useLoadVideo = ({ source }: LoadVideo['request']): LoadVideo['response'] =
   useEffect((): (() => void) => {
     let isActive = true;
 
+    // @safe
     const loadVideo = async (): Promise<void> => {
-      try {
-        const result = await loadVideoAsset({ source });
-        if (isActive && result) setVideoUri(result.uri);
-      } catch (error) {
-        console.error(error);
-      }
+      const result = await loadVideoAsset({ source });
+      if (isActive && result) setVideoUri(result.uri);
     };
 
     loadVideo();
@@ -85,16 +82,12 @@ const useThumbnail = ({
   useEffect((): (() => void) => {
     let isActive = true;
 
+    // @safe
     const generate = async (): Promise<void> => {
       if (!enabled || !uri) return;
 
-      try {
-        const results = await generateThumbnail({ time: Math.max(0, time) * 1000, uri });
-        if (isActive && results) setThumbnailUri(results.uri);
-      } catch (error) {
-        console.error(error);
-        if (isActive) setThumbnailUri(null);
-      }
+      const results = await generateThumbnail({ time: Math.max(0, time) * 1000, uri });
+      if (isActive && results) setThumbnailUri(results.uri);
     };
 
     generate();
@@ -126,18 +119,24 @@ const useVideoPlayer = ({
       play.loop = config.loop;
       play.muted = config.muted;
       play.volume = Math.min(1, Math.max(0, config.volume));
+      play.currentTime = Math.max(0, config.initialPosition);
 
-      if (config.initialPosition > 0) play.currentTime = config.initialPosition;
       if (config.autoPlay) {
         play.play();
         onPlay?.();
       }
     },
-    [config, onPlay]
+    [
+      config.autoPlay,
+      config.initialPosition,
+      config.loop,
+      config.muted,
+      config.volume,
+      onPlay,
+    ]
   );
 
   const player = useExpoVideoPlayer(source, initializePlayer);
-
   return { player };
 };
 

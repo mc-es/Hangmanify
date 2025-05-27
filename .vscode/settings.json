@@ -242,7 +242,7 @@
       "name": "custom-routing",
       "base": "routing",
       "color": "pink-600",
-      "fileNames": ["RootNavigation.tsx", "RootStackParamList.ts"]
+      "fileNames": ["AppNavigation.tsx", "RootStackParamList.ts"]
     },
     {
       "name": "custom-virtual",
@@ -339,6 +339,13 @@
       "color": "green-500",
       "folderNames": ["poppins", "nunito"],
       "rootFolderNames": ["src"]
+    },
+    {
+      "name": "custom-docs",
+      "base": "docs",
+      "color": "teal-400",
+      "folderNames": ["guides"],
+      "rootFolderNames": ["."]
     }
   ]
 }

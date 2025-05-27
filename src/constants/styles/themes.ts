@@ -1,31 +1,18 @@
-import { Dimensions } from 'src/utils';
+import { dimensions } from 'src/utils';
 
 import { COLORS } from './colors';
 import { FONTS } from './fonts';
+
+const sizeValues = [10, 12, 14, 16, 18, 20, 24, 32, 48] as const;
+const fontSizes = Object.freeze(
+  Object.fromEntries(sizeValues.map((value) => [`_${value}`, dimensions.fs(value)]))
+) as Readonly<Record<`_${(typeof sizeValues)[number]}`, number>>;
 
 export const enum SYSTEM_THEME {
   DARK = 'dark',
   LIGHT = 'light',
 }
 
-const rawFontSizes = {
-  _10: 10,
-  _12: 12,
-  _14: 14,
-  _16: 16,
-  _18: 18,
-  _20: 20,
-  _24: 24,
-  _32: 32,
-  _48: 48,
-} satisfies Record<string, number>;
-const fontSizes = Object.entries(rawFontSizes).reduce(
-  (acc, [key, value]) => {
-    acc[key as keyof typeof rawFontSizes] = Dimensions.fs(value);
-    return acc;
-  },
-  {} as Record<keyof typeof rawFontSizes, number>
-);
 type ColorFamily = (typeof COLORS)[keyof typeof COLORS];
 type ColorTone = ColorFamily[keyof ColorFamily];
 type CommonColors =
@@ -37,13 +24,10 @@ type CommonColors =
   | 'secondary'
   | 'success'
   | 'warning';
+type FontTheme = { families: typeof FONTS; sizes: typeof fontSizes };
 
-interface FontTheme {
-  readonly families: typeof FONTS;
-  readonly sizes: typeof fontSizes;
-}
 interface GlobalTheme {
-  color: Record<CommonColors, ColorTone>;
+  color: Readonly<Record<CommonColors, ColorTone>>;
   font: FontTheme;
 }
 interface Palette {

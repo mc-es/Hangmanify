@@ -1,24 +1,38 @@
 import {
-  useNavigation as nativeUseNavigation,
-  useRoute as nativeUseRoute,
   type NavigationProp,
   type RouteProp,
+  useNavigation as useNativeNavigation,
+  useRoute as useNativeRoute,
 } from '@react-navigation/native';
 
-export const enum NavigationNames {
+export const enum RouteNames {
   ABOUT = 'About',
   HOME = 'Home',
 }
 
 export type RootStackParamList = {
-  [NavigationNames.ABOUT]: { name: string };
-  [NavigationNames.HOME]: undefined;
+  [RouteNames.ABOUT]: { name: string };
+  [RouteNames.HOME]: undefined;
 };
 
-export const useNavigation = (): NavigationProp<RootStackParamList> =>
-  nativeUseNavigation<NavigationProp<RootStackParamList>>();
-
-export const useRoute = <T extends keyof RootStackParamList>(): RouteProp<
+function useNavigation(): never;
+function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<
   RootStackParamList,
   T
-> => nativeUseRoute<RouteProp<RootStackParamList, T>>();
+>;
+function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<
+  RootStackParamList,
+  T
+> {
+  return useNativeNavigation<NavigationProp<RootStackParamList, T>>();
+}
+function useRoute(): never;
+function useRoute<T extends keyof RootStackParamList>(): RouteProp<RootStackParamList, T>;
+function useRoute<T extends keyof RootStackParamList>(): RouteProp<
+  RootStackParamList,
+  T
+> {
+  return useNativeRoute<RouteProp<RootStackParamList, T>>();
+}
+
+export { useNavigation, useRoute };

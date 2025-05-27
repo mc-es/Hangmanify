@@ -10,7 +10,7 @@ export default {
         'Enforces that useNavigation/useRoute generics match the screen name and are not imported from @react-navigation/native',
       category: 'Type Safety',
       recommended: false,
-      url: 'https://github.com/mces58/Hangmanify/blob/master/plugins/guides/match-navigation-route.md',
+      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/match-navigation-route.md',
     },
     messages: {
       mismatch:

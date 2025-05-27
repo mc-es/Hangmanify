@@ -7,7 +7,7 @@ export default {
       description: 'Ensure useState always has a type argument',
       category: 'Type Safety',
       recommended: false,
-      url: 'https://github.com/mces58/Hangmanify/blob/master/plugins/guides/require-usestate-type.md',
+      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/require-usestate-type.md',
     },
     schema: [],
   },

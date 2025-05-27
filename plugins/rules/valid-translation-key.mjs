@@ -54,7 +54,7 @@ export default {
         'Checks that the translation key passed to the t() function is valid according to the nested structure defined in the TranslationKeys type file.',
       category: 'Best Practices',
       recommended: false,
-      url: 'https://github.com/mces58/Hangmanify/blob/master/plugins/guides/valid-translation-key.md',
+      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/valid-translation-key.md',
     },
     schema: [],
     messages: {

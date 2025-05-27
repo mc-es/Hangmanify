@@ -8,7 +8,7 @@ export default {
         'Enforces that async functions include error handling with try/catch, unless marked with @safe.',
       category: 'Error Handling',
       recommended: false,
-      url: 'https://github.com/mces58/Hangmanify/blob/master/plugins/guides/require-try-catch-async.md',
+      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/require-try-catch-async.md',
     },
     schema: [],
   },

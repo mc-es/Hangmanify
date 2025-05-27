@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 
 // don't import from '../navigations' here — it causes a circular dependency:
-import RootNavigation from './navigations/RootNavigation';
+import AppNavigation from './navigations/AppNavigation';
 
 import { useTheme } from './contexts';
 
@@ -17,7 +17,7 @@ const Main = (): React.JSX.Element => {
       style={[styles.container, { backgroundColor: theme.palette.background }]}
     >
       <StatusBar backgroundColor={theme.palette.background} style="auto" />
-      <RootNavigation />
+      <AppNavigation />
     </SafeAreaView>
   );
 };

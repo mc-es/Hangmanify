@@ -14,4 +14,4 @@ function interpolate(template: string, options: TranslateOptions): string {
   );
 }
 
-export const Helpers = { getNestedValue, interpolate };
+export const helpers = { getNestedValue, interpolate };

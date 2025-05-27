@@ -8,6 +8,7 @@ export default {
         'Enforces that JSX props are sorted in alphabetical order for readability and consistency.',
       category: 'Stylistic Issues',
       recommended: false,
+      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/jsx-sort-props.md',
     },
     schema: [],
     messages: {
@@ -34,7 +35,6 @@ export default {
               messageId: 'unsortedProps',
               data: { prev: prevName, current: currentName },
             });
-            break;
           }
           prevName = currentName;
         }

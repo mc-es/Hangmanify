@@ -6,7 +6,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { I18nProvider, ThemeProvider } from 'src/contexts';
 import Main from 'src/Main';
 
-import { LoadFonts } from 'src/utils/load-fonts';
+import { loadFonts } from 'src/utils/load-fonts';
 
 import './global.css';
 import * as Storybook from '.storybook';
@@ -24,7 +24,7 @@ const App = (): React.JSX.Element => {
 
     const prepare = async (): Promise<void> => {
       try {
-        await LoadFonts();
+        await loadFonts();
       } catch (error) {
         console.warn(error);
       } finally {

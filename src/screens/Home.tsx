@@ -2,9 +2,9 @@ import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 
 import { useTheme } from 'src/contexts';
-import { NavigationNames, useNavigation } from 'src/navigations';
+import { RouteNames, useNavigation } from 'src/navigations';
 import { useCounter, useGlobalText } from 'src/stores';
-import { Dimensions } from 'src/utils';
+import { dimensions } from 'src/utils';
 
 import { Button } from 'src/components/buttons';
 
@@ -14,12 +14,12 @@ import ExpoLogo from 'assets/svgs/expo.svg';
 const Home = (): React.JSX.Element => {
   const { count, increase } = useCounter();
   const { text, setText } = useGlobalText();
-  const navigation = useNavigation();
+  const navigation = useNavigation<RouteNames.HOME>();
   const { theme } = useTheme();
 
   return (
     <View className="my_container" style={{ backgroundColor: theme.palette.background }}>
-      <ExpoLogo fill={'red'} height={Dimensions.ms(60)} width={Dimensions.ms(60)} />
+      <ExpoLogo fill={'red'} height={dimensions.ms(60)} width={dimensions.ms(60)} />
       <Text>Home</Text>
       <Text
         style={{
@@ -41,7 +41,7 @@ const Home = (): React.JSX.Element => {
       <Button text="Increment" onPress={increase} />
       <Button
         text="About"
-        onPress={() => navigation.navigate(NavigationNames.ABOUT, { name: 'can' })}
+        onPress={() => navigation.navigate(RouteNames.ABOUT, { name: 'can' })}
       />
       <TextInput
         placeholder="input"

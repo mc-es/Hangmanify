@@ -1,3 +1,5 @@
+'use strict';
+
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
@@ -12,17 +14,21 @@ function parseObject(text) {
   const obj = {};
   const regex = /(?:['"]?(\w+)['"]?\s*:\s*)(\{)?/g; // NOSONAR
   let match;
+
   while ((match = regex.exec(text))) {
     const key = match[1];
+
     if (match[2] === '{') {
       let startIndex = regex.lastIndex;
       let braceCount = 1;
       let i = startIndex;
+
       while (braceCount && i < text.length) {
         if (text[i] === '{') braceCount++;
         else if (text[i] === '}') braceCount--;
         i++;
       }
+
       const block = text.slice(startIndex, i - 1);
       obj[key] = parseObject(block);
       regex.lastIndex = i;
@@ -30,6 +36,7 @@ function parseObject(text) {
       obj[key] = true;
     }
   }
+
   return obj;
 }
 
@@ -47,6 +54,7 @@ export default {
         'Checks that the translation key passed to the t() function is valid according to the nested structure defined in the TranslationKeys type file.',
       category: 'Best Practices',
       recommended: false,
+      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/valid-translation-key.md',
     },
     schema: [],
     messages: {
@@ -56,14 +64,16 @@ export default {
 
   create(context) {
     let translationKeysStructure = {};
+
     try {
-      const fileContent = readFileSync(
-        resolve('src/constants/localization/translation-keys.d.ts'),
-        'utf-8'
+      const filePath = resolve(
+        process.cwd(),
+        'src/constants/localization/translation-keys.d.ts'
       );
+      const fileContent = readFileSync(filePath, 'utf-8');
       translationKeysStructure = parseTranslationKeys(fileContent);
     } catch (error) {
-      console.error('Could not read translation keys file:', error);
+      console.error('[eslint-plugin] Could not read TranslationKeys:', error);
     }
 
     return {

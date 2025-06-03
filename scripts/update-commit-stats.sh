@@ -1,26 +1,46 @@
+#!/bin/bash
+
 README=".husky/README.md"
 TEMP_OUTPUT=".husky/.readme-without-stats.tmp"
 TEMP_STATS=".husky/.commit-raw.tmp"
 TEMP_CHART=".husky/.commit-chart.tmp"
 
-# 1. Get commit types from the last 7 days
-git log --since="7 days ago" --pretty=format:'%s' \
+# 1. Get commit types from the full history
+git log --pretty=format:'%s' \
   | grep -o '^[a-z]\+' \
   | sort | uniq -c | sort -nr > "$TEMP_STATS"
 
-# 2. Determine the highest commit count for scaling the bar chart
-MAX_COUNT=$(awk '{print $1}' "$TEMP_STATS" | sort -nr | head -n1)
-MAX_BAR=20
+# 2. Calculate total number of commits
+TOTAL=$(awk '{sum += $1} END {print sum}' "$TEMP_STATS")
 
-# 3. Generate ASCII bar chart
+# 3. Generate lines and track cumulative percentage
 > "$TEMP_CHART"
+sum_percent=0
+declare -a lines
+
 while read -r count type; do
-  bar_length=$(( count * MAX_BAR / MAX_COUNT ))
-  bar=$(printf '█%.0s' $(seq 1 $bar_length))
-  printf "%-8s %-20s %2s\n" "$type" "$bar" "$count" >> "$TEMP_CHART"
+  percent=$(awk -v c="$count" -v t="$TOTAL" 'BEGIN { printf "%.0f", (c * 100 / t) }')
+  sum_percent=$((sum_percent + percent))
+  plural="s"
+  [ "$count" -eq 1 ] && plural=""
+  lines+=("$(printf "%-8s : %2d commit%s (%d%%)" "$type" "$count" "$plural" "$percent")")
 done < "$TEMP_STATS"
 
-# 4. Remove existing stats section from README (if any)
+# 4. Adjust the top line if percentage sum is not 100
+if [ "$sum_percent" -ne 100 ] && [ "${#lines[@]}" -gt 0 ]; then
+  diff=$((100 - sum_percent))
+  original="${lines[0]}"
+  # Extract current percent value from e.g., "(39%)"
+  percent_val=$(echo "$original" | grep -o '([0-9]\+%)' | grep -o '[0-9]\+')
+  new_percent=$((percent_val + diff))
+  # Replace (XX%) with (YY%)
+  lines[0]=$(echo "$original" | sed -E "s/\([0-9]+%\)/(${new_percent}%)/")
+fi
+
+# 5. Write lines to chart
+printf "%s\n" "${lines[@]}" > "$TEMP_CHART"
+
+# 6. Remove old stats section from README
 awk '
   BEGIN { skip=0 }
   /^## 📊 Weekly Commit Type Stats/ { skip=1; next }
@@ -28,7 +48,7 @@ awk '
   skip == 0 { print }
 ' "$README" > "$TEMP_OUTPUT"
 
-# 5. Build the new stats section with bar chart
+# 7. Build the new stats section
 STATS_SECTION=$(cat <<EOF
 ## 📊 Weekly Commit Type Stats
 \`\`\`
@@ -39,7 +59,7 @@ $(cat "$TEMP_CHART")
 EOF
 )
 
-# 6. Insert the new stats section before the "## 📘 Resources" heading
+# 8. Insert the new stats section before "## 📘 Resources"
 awk -v stats="$STATS_SECTION" '
   /^## 📘 Resources/ {
     print stats
@@ -48,5 +68,5 @@ awk -v stats="$STATS_SECTION" '
   { print }
 ' "$TEMP_OUTPUT" > "$README"
 
-# 7. Clean up temporary files
+# 9. Clean up
 rm "$TEMP_OUTPUT" "$TEMP_STATS" "$TEMP_CHART"

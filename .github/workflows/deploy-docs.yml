@@ -4,6 +4,8 @@ name: Deploy Docz to Pages
 on:
   push:
     branches: ['master']
+    paths-ignore:
+      - '.husky/README.md'
 
 permissions:
   contents: read

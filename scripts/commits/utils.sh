@@ -1,3 +1,5 @@
+#!/bin/bash
+
 COMMIT_TEMPLATE_FILE="$(dirname "$0")/commit-message-template.html"
 FILE_URL="file://$COMMIT_TEMPLATE_FILE"
 

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source "$(dirname "$0")/utils.sh"
 
 check_env_variables

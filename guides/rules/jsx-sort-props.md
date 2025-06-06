@@ -46,6 +46,12 @@ Sorting JSX props alphabetically:
 
 ---
 
+### 📂 Ignored Files
+
+This rule only applies to `.tsx` files.
+
+---
+
 ### 🔍 When To Enable
 
 Enable this rule when:

@@ -13,7 +13,7 @@ export default {
     schema: [],
     messages: {
       unsortedProps:
-        "JSX props should be sorted in alphabetical order. '{{prev}}' should come before '{{current}}'.",
+        "JSX props should be sorted in alphabetical order. '{{current}}' should come before '{{prev}}'.",
     },
   },
   create(context) {

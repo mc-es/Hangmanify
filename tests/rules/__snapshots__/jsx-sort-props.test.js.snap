@@ -16,6 +16,22 @@ exports[`jsx-sort-props rule invalid cases Boolean shorthand props unsorted 1`] 
 ]
 `;
 
+exports[`jsx-sort-props rule invalid cases Duplicate props in wrong order 1`] = `
+[
+  {
+    "column": 18,
+    "endColumn": 23,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "@custom-typescript-eslint/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
 exports[`jsx-sort-props rule invalid cases Multiline props wrong order 1`] = `
 [
   {
@@ -67,6 +83,22 @@ exports[`jsx-sort-props rule invalid cases Props in wrong order 1`] = `
     "endLine": 1,
     "line": 1,
     "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "@custom-typescript-eslint/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule invalid cases Similar long names, wrong order 1`] = `
+[
+  {
+    "column": 22,
+    "endColumn": 29,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'app' should come before 'apple'.",
     "messageId": "unsortedProps",
     "nodeType": "JSXAttribute",
     "ruleId": "@custom-typescript-eslint/jsx-sort-props",

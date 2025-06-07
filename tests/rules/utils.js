@@ -31,7 +31,7 @@ function createConfig(ruleName, rule) {
 /**
  * Runs ESLint rule tests with Jest using valid and invalid test cases.
  */
-function runTest(ruleName, rule, validCases, invalidCases, defaultPattern) {
+function runTest(ruleName, rule, validCases, invalidCases) {
   describe(`${ruleName} rule`, () => {
     let linter;
     const config = createConfig(ruleName, rule);
@@ -53,8 +53,6 @@ function runTest(ruleName, rule, validCases, invalidCases, defaultPattern) {
       test.each(invalidCases)('$name', ({ code, filename, expectedErrors }) => {
         const messages = verify(code, filename);
         expect(messages.length).toBe(expectedErrors);
-        if (defaultPattern) expect(messages[0].message).toMatch(defaultPattern);
-
         expect(messages).toMatchSnapshot();
       });
     });

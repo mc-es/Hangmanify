@@ -110,4 +110,4 @@ const invalidCases = [
   },
 ];
 
-runTest('jsx-sort-props', rule, validCases, invalidCases, /should come before/);
+runTest('jsx-sort-props', rule, validCases, invalidCases);

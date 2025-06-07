@@ -125,10 +125,4 @@ const invalidCases = [
   },
 ];
 
-runTest(
-  'filename-match-component',
-  rule,
-  validCases,
-  invalidCases,
-  /must exactly match the component name/
-);
+runTest('filename-match-component', rule, validCases, invalidCases);

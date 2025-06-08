@@ -20,7 +20,7 @@ export default defineConfig([
     extends: ['js/recommended'],
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    plugins: { '@custom-typescript': customTsRules, js, perfectionist },
+    plugins: { '@custom-typescript-eslint': customTsRules, js, perfectionist },
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
@@ -28,6 +28,7 @@ export default defineConfig([
     ignores: [
       'docs',
       'node_modules',
+      'tests',
       'plugins',
       '.docz',
       '.storybook',
@@ -48,12 +49,12 @@ export default defineConfig([
   {
     rules: {
       //* custom rules
-      '@custom-typescript/filename-match-component': 'error',
-      // '@custom-typescript/jsx-sort-props': 'error',
-      '@custom-typescript/match-navigation-route': 'error',
-      '@custom-typescript/require-try-catch-async': 'error',
-      '@custom-typescript/require-usestate-type': 'error',
-      '@custom-typescript/valid-translation-key': 'error',
+      '@custom-typescript-eslint/filename-match-component': 'error',
+      // '@custom-typescript-eslint/jsx-sort-props': 'error',
+      '@custom-typescript-eslint/match-navigation-route': 'error',
+      '@custom-typescript-eslint/require-try-catch-async': 'error',
+      '@custom-typescript-eslint/require-usestate-type': 'error',
+      '@custom-typescript-eslint/valid-translation-key': 'error',
 
       //- typescript rules
       '@typescript-eslint/consistent-type-exports': 'error',

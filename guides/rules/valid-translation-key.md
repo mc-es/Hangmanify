@@ -46,8 +46,11 @@ t('greetings.welcome');
 ```ts
 // Key does not exist in TranslationKeys
 t('greetings.hello');
-// Error: The translation key "greetings.hello" is not defined in TranslationKeys
+// Error: The translation key "greetings.hello" is not defined in TranslationKeys. Did you mean: "greetings.hi", "greetings.welcome"?
 ```
+
+If a key is invalid, the rule will suggest possible alternatives using a string similarity algorithm (Levenshtein distance).
+Only suggestions with close matches are shown, and dynamic keys are ignored.
 
 ---
 

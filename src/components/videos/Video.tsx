@@ -59,7 +59,10 @@ const Video: React.FC<Readonly<VideoProps>> = (props): React.JSX.Element => {
   };
 
   const shouldShowThumbnail =
-    thumbnail.enabled && !autoPlay && !hasPlayedOnce.current && !!generatedThumbnailUri;
+    thumbnail.enabled &&
+    !autoPlay &&
+    !hasPlayedOnce.current &&
+    !!generatedThumbnailUri.uri;
 
   return (
     <View
@@ -80,7 +83,7 @@ const Video: React.FC<Readonly<VideoProps>> = (props): React.JSX.Element => {
           />
           {shouldShowThumbnail && (
             <Pressable style={StyleSheet.absoluteFill} onPress={handlePress}>
-              {generatedThumbnailUri.uri && (
+              {!!generatedThumbnailUri.uri && (
                 <Image
                   resizeMode="cover"
                   source={{ uri: generatedThumbnailUri.uri }}

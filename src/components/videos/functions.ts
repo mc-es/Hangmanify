@@ -24,7 +24,7 @@ interface LoadVideoAsset {
 /**
  * ### Generates a thumbnail image from the specified video URI and time.
  * @param {GenerateThumbnail['request']} { time: number, uri: string }
- * @return {GenerateThumbnail['response']} { height: number; uri: string; width: number } | null;
+ * @returns {GenerateThumbnail['response']} { height: number; uri: string; width: number } | null;
  */
 const generateThumbnail = async ({
   time,
@@ -42,7 +42,7 @@ const generateThumbnail = async ({
 /**
  * ### Loads a local or remote video asset and returns its local URI.
  * @param {LoadVideoAsset['request']} { source: number | string }
- * @return {LoadVideoAsset['response']} { uri: string | null } | null;
+ * @returns {LoadVideoAsset['response']} { uri: string | null } | null;
  */
 const loadVideoAsset = async ({
   source,

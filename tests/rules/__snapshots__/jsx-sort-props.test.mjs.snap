@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jsx-sort-props rule -> invalid cases -> boolean shorthand props unsorted 1`] = `
+[
+  {
+    "column": 14,
+    "endColumn": 15,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> duplicate props in wrong order 1`] = `
+[
+  {
+    "column": 18,
+    "endColumn": 23,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> multiline props wrong order 1`] = `
+[
+  {
+    "column": 9,
+    "endColumn": 14,
+    "endLine": 4,
+    "line": 4,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'z'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> multiple unsorted props 1`] = `
+[
+  {
+    "column": 18,
+    "endColumn": 23,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'b' should come before 'c'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+  {
+    "column": 24,
+    "endColumn": 29,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> props in wrong order 1`] = `
+[
+  {
+    "column": 18,
+    "endColumn": 23,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> similar long names, wrong order 1`] = `
+[
+  {
+    "column": 22,
+    "endColumn": 29,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'app' should come before 'apple'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> similar starting letters, wrong order 1`] = `
+[
+  {
+    "column": 19,
+    "endColumn": 24,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'aa'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> spread followed by unsorted props 1`] = `
+[
+  {
+    "column": 29,
+    "endColumn": 34,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`jsx-sort-props rule -> invalid cases -> unsorted with spread between 1`] = `
+[
+  {
+    "column": 29,
+    "endColumn": 34,
+    "endLine": 1,
+    "line": 1,
+    "message": "JSX props should be sorted in alphabetical order. 'a' should come before 'b'.",
+    "messageId": "unsortedProps",
+    "nodeType": "JSXAttribute",
+    "ruleId": "__test_plugin__/jsx-sort-props",
+    "severity": 2,
+  },
+]
+`;

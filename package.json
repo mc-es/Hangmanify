@@ -20,7 +20,7 @@
     "prepare": "husky",
     "storybook-generate": "sb-rn-get-stories",
     "install-vscode-extensions": "cd .vscode && chmod +x install && ./install",
-    "test": "jest"
+    "test": "jest -u"
   },
   "engines": {
     "node": ">=22",
@@ -75,10 +75,12 @@
     "eslint": "^9.23.0",
     "eslint-plugin-perfectionist": "^4.13.0",
     "eslint-plugin-react": "^7.37.4",
+    "fast-levenshtein": "^3.0.0",
     "globals": "^16.0.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "lint-staged": "^15.5.0",
+    "memfs": "^4.17.2",
     "postcss": "^8.5.3",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",

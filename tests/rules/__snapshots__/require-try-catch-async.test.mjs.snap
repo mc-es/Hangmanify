@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`require-try-catch-async rule invalid cases Async IIFE without try/catch or @safe 1`] = `
+exports[`require-try-catch-async rule -> invalid cases -> async IIFE without try/catch or @safe 1`] = `
 [
   {
-    "column": 6,
-    "endColumn": 6,
+    "column": 8,
+    "endColumn": 8,
     "endLine": 4,
     "line": 2,
     "message": "Async functions must include try/catch or be marked with an exact @safe comment directly above the function.",
     "nodeType": "ArrowFunctionExpression",
-    "ruleId": "@custom-typescript-eslint/require-try-catch-async",
+    "ruleId": "__test_plugin__/require-try-catch-async",
     "severity": 2,
   },
 ]
 `;
 
-exports[`require-try-catch-async rule invalid cases Async arrow function without try/catch or @safe 1`] = `
+exports[`require-try-catch-async rule -> invalid cases -> async arrow function without try/catch or @safe 1`] = `
 [
   {
     "column": 23,
@@ -24,13 +24,13 @@ exports[`require-try-catch-async rule invalid cases Async arrow function without
     "line": 2,
     "message": "Async functions must include try/catch or be marked with an exact @safe comment directly above the function.",
     "nodeType": "ArrowFunctionExpression",
-    "ruleId": "@custom-typescript-eslint/require-try-catch-async",
+    "ruleId": "__test_plugin__/require-try-catch-async",
     "severity": 2,
   },
 ]
 `;
 
-exports[`require-try-catch-async rule invalid cases Async function inside class method without try/catch 1`] = `
+exports[`require-try-catch-async rule -> invalid cases -> async function inside class method without try/catch 1`] = `
 [
   {
     "column": 24,
@@ -39,13 +39,13 @@ exports[`require-try-catch-async rule invalid cases Async function inside class 
     "line": 3,
     "message": "Async functions must include try/catch or be marked with an exact @safe comment directly above the function.",
     "nodeType": "FunctionExpression",
-    "ruleId": "@custom-typescript-eslint/require-try-catch-async",
+    "ruleId": "__test_plugin__/require-try-catch-async",
     "severity": 2,
   },
 ]
 `;
 
-exports[`require-try-catch-async rule invalid cases Async function with unrelated comment 1`] = `
+exports[`require-try-catch-async rule -> invalid cases -> async function with unrelated comment 1`] = `
 [
   {
     "column": 7,
@@ -54,13 +54,13 @@ exports[`require-try-catch-async rule invalid cases Async function with unrelate
     "line": 3,
     "message": "Async functions must include try/catch or be marked with an exact @safe comment directly above the function.",
     "nodeType": "FunctionDeclaration",
-    "ruleId": "@custom-typescript-eslint/require-try-catch-async",
+    "ruleId": "__test_plugin__/require-try-catch-async",
     "severity": 2,
   },
 ]
 `;
 
-exports[`require-try-catch-async rule invalid cases Async function without try/catch or @safe 1`] = `
+exports[`require-try-catch-async rule -> invalid cases -> async function without try/catch or @safe 1`] = `
 [
   {
     "column": 7,
@@ -69,37 +69,37 @@ exports[`require-try-catch-async rule invalid cases Async function without try/c
     "line": 2,
     "message": "Async functions must include try/catch or be marked with an exact @safe comment directly above the function.",
     "nodeType": "FunctionDeclaration",
-    "ruleId": "@custom-typescript-eslint/require-try-catch-async",
+    "ruleId": "__test_plugin__/require-try-catch-async",
     "severity": 2,
   },
 ]
 `;
 
-exports[`require-try-catch-async rule invalid cases Misspelled @safe comment is ignored 1`] = `
+exports[`require-try-catch-async rule -> invalid cases -> misspelled @safe comment is ignored 1`] = `
 [
   {
-    "column": 5,
-    "endColumn": 6,
+    "column": 7,
+    "endColumn": 8,
     "endLine": 5,
     "line": 3,
     "message": "Invalid @safe usage: Only "@safe" by itself is allowed to skip try/catch in async functions.",
     "nodeType": "FunctionDeclaration",
-    "ruleId": "@custom-typescript-eslint/require-try-catch-async",
+    "ruleId": "__test_plugin__/require-try-catch-async",
     "severity": 2,
   },
 ]
 `;
 
-exports[`require-try-catch-async rule invalid cases Non-leading @safe comment is ignored 1`] = `
+exports[`require-try-catch-async rule -> invalid cases -> non-leading @safe comment is ignored 1`] = `
 [
   {
-    "column": 5,
-    "endColumn": 6,
+    "column": 7,
+    "endColumn": 8,
     "endLine": 5,
     "line": 2,
     "message": "Async functions must include try/catch or be marked with an exact @safe comment directly above the function.",
     "nodeType": "FunctionDeclaration",
-    "ruleId": "@custom-typescript-eslint/require-try-catch-async",
+    "ruleId": "__test_plugin__/require-try-catch-async",
     "severity": 2,
   },
 ]

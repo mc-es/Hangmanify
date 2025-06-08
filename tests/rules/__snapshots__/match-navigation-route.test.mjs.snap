@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match-navigation-route rule -> invalid cases -> fails when generics are missing in both hooks 1`] = `
+[
+  {
+    "column": 19,
+    "endColumn": 34,
+    "endLine": 3,
+    "line": 3,
+    "message": "You must specify a generic like useNavigation<RouteNames.TEST> in this file.",
+    "messageId": "missing",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/match-navigation-route",
+    "severity": 2,
+  },
+  {
+    "column": 21,
+    "endColumn": 31,
+    "endLine": 4,
+    "line": 4,
+    "message": "You must specify a generic like useRoute<RouteNames.TEST> in this file.",
+    "messageId": "missing",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/match-navigation-route",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`match-navigation-route rule -> invalid cases -> fails when importing from @react-navigation/native 1`] = `
+[
+  {
+    "column": 10,
+    "endColumn": 23,
+    "endLine": 1,
+    "line": 1,
+    "message": "Do not import "useNavigation" from @react-navigation/native. Use your local wrapper instead.",
+    "messageId": "bannedImport",
+    "nodeType": "ImportSpecifier",
+    "ruleId": "__test_plugin__/match-navigation-route",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`match-navigation-route rule -> invalid cases -> fails with mismatched generic in useNavigation 1`] = `
+[
+  {
+    "column": 33,
+    "endColumn": 51,
+    "endLine": 3,
+    "line": 3,
+    "message": "Generic "RouteNames.PROFILE" does not match expected "RouteNames.TEST" based on filename.",
+    "messageId": "mismatch",
+    "nodeType": "TSTypeReference",
+    "ruleId": "__test_plugin__/match-navigation-route",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`match-navigation-route rule -> invalid cases -> fails with mismatched generic in useRoute 1`] = `
+[
+  {
+    "column": 30,
+    "endColumn": 49,
+    "endLine": 3,
+    "line": 3,
+    "message": "Generic "RouteNames.SETTINGS" does not match expected "RouteNames.TEST" based on filename.",
+    "messageId": "mismatch",
+    "nodeType": "TSTypeReference",
+    "ruleId": "__test_plugin__/match-navigation-route",
+    "severity": 2,
+  },
+]
+`;

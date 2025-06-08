@@ -17,7 +17,8 @@ export default {
 
   create(context) {
     const filename = context.getFilename().replace(/\\/g, '/');
-    if (!filename.includes('/components/')) return {};
+    if (!filename.includes('/components/') && !filename.endsWith('/tests/rules/Test.tsx'))
+      return {};
     if (filename.includes('.stories.')) return {};
 
     const baseFilename = path.basename(filename, path.extname(filename));

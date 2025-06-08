@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`valid-translation-key rule -> invalid cases -> invalid deep key - profile.avatar.update 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 26,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "profile.avatar.update" is not defined in TranslationKeys.Did you mean: "greetings"?",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "__test_plugin__/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule -> invalid cases -> invalid key - greetings.bye 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 18,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "greetings.bye" is not defined in TranslationKeys.Did you mean: "greetings.hi", "greetings.welcome"?",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "__test_plugin__/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule -> invalid cases -> invalid nested key - login.email 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 16,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "login.email" is not defined in TranslationKeys.Did you mean: "greetings"?",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "__test_plugin__/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule -> invalid cases -> invalid partial key - greetings 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 14,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "greetings" is not defined in TranslationKeys.",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "__test_plugin__/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule -> invalid cases -> non-existent root key 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 20,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "nonexistent.key" is not defined in TranslationKeys.Did you mean: "greetings"?",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "__test_plugin__/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;

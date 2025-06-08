@@ -5,7 +5,7 @@ export default {
     type: 'problem',
     docs: {
       description:
-        'Enforces that async functions include error handling with try/catch, unless marked with @safe.',
+        'Enforces that async functions include error handling with try/catch, unless marked with an exact @safe comment.',
       category: 'Error Handling',
       recommended: false,
       url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/require-try-catch-async.md',
@@ -52,16 +52,26 @@ export default {
         .filter(Boolean)
         .flatMap((n) => sourceCode.getCommentsBefore(n));
 
-      const isSafe = commentsBefore.some((comment) =>
+      const safeComment = commentsBefore.find((comment) =>
         comment.value.trim().startsWith('@safe')
       );
 
-      if (!hasTry && !isSafe) {
-        context.report({
-          node,
-          message:
-            'Async functions must include try/catch or be marked with @safe above the function.',
-        });
+      const isExactlySafe = safeComment?.value.trim() === '@safe';
+
+      if (!hasTry) {
+        if (safeComment && !isExactlySafe) {
+          context.report({
+            node,
+            message:
+              'Invalid @safe usage: Only "@safe" by itself is allowed to skip try/catch in async functions.',
+          });
+        } else if (!isExactlySafe) {
+          context.report({
+            node,
+            message:
+              'Async functions must include try/catch or be marked with an exact @safe comment directly above the function.',
+          });
+        }
       }
     }
 

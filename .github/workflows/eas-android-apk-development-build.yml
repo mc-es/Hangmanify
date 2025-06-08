@@ -3,6 +3,8 @@ name: EAS Android APK Development Build
 on:
   pull_request:
     branches: ['master']
+    paths-ignore:
+      - '.husky/README.md'
 
 jobs:
   build:

@@ -309,6 +309,12 @@
       "base": "proto",
       "color": "red-600",
       "fileNames": ["initial.ts"]
+    },
+    {
+      "name": "custom-test",
+      "base": "test-js",
+      "color": "yellow-500",
+      "fileExtensions": ["test.mjs", "test.mjs.snap"]
     }
   ],
   "material-icon-theme.folders.customClones": [
@@ -345,6 +351,13 @@
       "base": "docs",
       "color": "teal-400",
       "folderNames": ["guides"],
+      "rootFolderNames": ["."]
+    },
+    {
+      "name": "custom-meta",
+      "base": "meta",
+      "color": "purple-500",
+      "folderNames": ["commits"],
       "rootFolderNames": ["."]
     }
   ]

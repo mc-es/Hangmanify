@@ -36,12 +36,12 @@ Commit messages **must not** contain past-tense verbs.
 
 ### 3. ⚙️ Commitlint Configuration
 
-| Rule                     | Description                                                                 |
-|--------------------------|-----------------------------------------------------------------------------|
+| Rule                     | Description                                                                       |
+|--------------------------|-----------------------------------------------------------------------------------|
 | `type` required          | Must be one of: `feat`, `fix`, `change`, `chore`, `docs`, `style`, `perf`, `test` |
-| `scope` required         | Must be in `kebab-case` (e.g., `user-profile`, `api`, `readme`)             |
-| `subject` required       | Must start with lowercase, no period at the end                             |
-| `header` max length      | Must not exceed 100 characters                                               |
+| `scope` required         | Must be in `kebab-case` (e.g., `user-profile`, `api`, `readme`)                   |
+| `subject` required       | Must start with lowercase, no period at the end                                   |
+| `header` max length      | Must not exceed 100 characters                                                    |
 
 ---
 
@@ -63,14 +63,14 @@ Commit messages **must not** contain past-tense verbs.
 
 ## 📁 Key Files Overview
 
-| File                                   | Description                                                   |
-|----------------------------------------|---------------------------------------------------------------|
-| `.husky/commit-msg`                    | Validates commit message format and tense                     |
-| `.husky/pre-commit`                    | Lints staged files, blocks `master` commits                   |
-| `scripts/utils.sh`                     | Shell utilities (logging, validation helpers)                 |
-| `scripts/commit-tense-check.ts`        | AI-based tense validation using Google Gemini API             |
-| `scripts/commit-lint-check.sh`         | Wrapper script for `commitlint` validation                    |
-| `scripts/commit-message-template.html` | Opens a visual guide in browser when a commit fails           |
+| File                                           | Description                                          |
+|------------------------------------------------|------------------------------------------------------|
+| `.husky/commit-msg`                            | Validates commit message format and tense            |
+| `.husky/pre-commit`                            | Lints staged files, blocks `master` commits          |
+| `scripts/commits/utils.sh`                     | Shell utilities (logging, validation helpers)        |
+| `scripts/commits/commit-tense-check.ts`        | AI-based tense validation using Google Gemini API    |
+| `scripts/commits/commit-lint-check.sh`         | Wrapper script for `commitlint` validation           |
+| `scripts/commits/commit-message-template.html` | Opens a visual guide in browser when a commit fails  |
 
 ---
 
@@ -90,8 +90,8 @@ GOOGLE_GENERATIVE_AI_API_KEY=your-key-here
 
 ## ⚠️ Common Errors & Fixes
 
-| ❗ **Error Message**                          | 🔍 **Explanation**                                                                 |
-|----------------------------------------------|------------------------------------------------------------------------------------|
+| ❗ **Error Message**                         | 🔍 **Explanation**                                                                |
+|----------------------------------------------|-----------------------------------------------------------------------------------|
 | `Commit message is in past tense.`           | You used a past-tense verb like "Added". Use present tense instead (e.g., "Add"). |
 | `Commit message does not follow format.`     | The message doesn't match the required format: `type(scope): subject`.            |
 | `You are on master branch`                   | Direct commits to the `master` branch are blocked. Switch to a feature branch.    |
@@ -133,11 +133,11 @@ This helps you quickly rewrite the message using the correct verb tense and conv
 You can extend or customize this system by editing or adding logic in the following areas:
 
 ### 🔧 Shell-Based Logic
-- Located in `scripts/utils.sh` or other `.sh` files.
+- Located in `scripts/commits/utils.sh` or other `.sh` files.
 - Handles branch protection, formatting checks, and environment validation.
 
 ### 🤖 AI-Based Logic
-- Located in `scripts/commit-tense-check.ts`.
+- Located in `scripts/commits/commit-tense-check.ts`.
 - Uses the **Google Gemini API** to detect past-tense verbs in commit messages.
 
 ### 📝 Commit Format Rules

@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`require-usestate-type rule -> invalid cases -> disallows missing type for array value 1`] = `
+[
+  {
+    "column": 27,
+    "endColumn": 39,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule -> invalid cases -> disallows missing type for number value 1`] = `
+[
+  {
+    "column": 27,
+    "endColumn": 38,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule -> invalid cases -> disallows missing type for object literal 1`] = `
+[
+  {
+    "column": 25,
+    "endColumn": 59,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule -> invalid cases -> disallows missing type for string value 1`] = `
+[
+  {
+    "column": 23,
+    "endColumn": 35,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule -> invalid cases -> disallows missing type for union literal value 1`] = `
+[
+  {
+    "column": 29,
+    "endColumn": 48,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule -> invalid cases -> disallows missing type with React.useState 1`] = `
+[
+  {
+    "column": 25,
+    "endColumn": 45,
+    "endLine": 1,
+    "line": 1,
+    "message": "'React.useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "__test_plugin__/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;

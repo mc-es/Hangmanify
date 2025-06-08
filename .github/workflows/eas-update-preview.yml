@@ -3,6 +3,8 @@ name: EAS Update Preview
 on:
   push:
     branches: ['master']
+    paths-ignore:
+      - '.husky/README.md'
 
 jobs:
   update:

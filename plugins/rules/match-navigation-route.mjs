@@ -26,7 +26,10 @@ export default {
   create(context) {
     const filename = context.getFilename().replace(/\\/g, '/');
 
-    if (!filename.includes('/src/screens/') || !filename.endsWith('.tsx')) return {};
+    const isScreenFile =
+      filename.includes('/src/screens/') || filename.includes('/tests/rules/');
+
+    if (!isScreenFile || !filename.endsWith('.tsx')) return {};
 
     const baseName = path.basename(filename);
     const screenName = baseName.replace(/\.tsx$/, '').toUpperCase();

@@ -43,7 +43,7 @@ interface VideoPlayer {
 /**
  * ### Loads a video asset from a local module or remote URL and returns its local URI.
  * @param {LoadVideo['request']} { source: number | string }
- * @return {LoadVideo['response']}  { uri: string | null }
+ * @returns {LoadVideo['response']}  { uri: string | null }
  */
 const useLoadVideo = ({ source }: LoadVideo['request']): LoadVideo['response'] => {
   const [videoUri, setVideoUri] = useState<string | null>(null);
@@ -70,7 +70,7 @@ const useLoadVideo = ({ source }: LoadVideo['request']): LoadVideo['response'] =
 /**
  * ### Generates a thumbnail image from a video at the specified time if enabled.
  * @param {Thumbnail['request']} { enabled: boolean, time: number, uri: string | null }
- * @return {Thumbnail['response']}  { uri: string | null }
+ * @returns {Thumbnail['response']}  { uri: string | null }
  */
 const useThumbnail = ({
   enabled,
@@ -107,7 +107,7 @@ const useThumbnail = ({
  *   onPlay?: () => void,
  *   source: VideoSource
  * }
- * @return {VideoPlayer['response']}  { player: ExpoVideoPlayer }
+ * @returns {VideoPlayer['response']}  { player: ExpoVideoPlayer }
  */
 const useVideoPlayer = ({
   config,

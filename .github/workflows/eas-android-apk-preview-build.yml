@@ -3,6 +3,8 @@ name: EAS Android APK Preview Build
 on:
   push:
     branches: ['master']
+    paths-ignore:
+      - '.husky/README.md'
 
 jobs:
   build:

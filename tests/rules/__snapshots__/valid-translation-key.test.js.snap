@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`valid-translation-key rule invalid cases Invalid key - completely unknown section 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 19,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "settings.theme" is not defined in TranslationKeys.Did you mean: "greetings", "login", "profile"?",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "@custom-typescript-eslint/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule invalid cases Invalid key - greetings.bye 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 18,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "greetings.bye" is not defined in TranslationKeys.Did you mean: "greetings.hi", "greetings.welcome"?",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "@custom-typescript-eslint/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule invalid cases Invalid key - profile.avatar 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 19,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "profile.avatar" is not defined in TranslationKeys.",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "@custom-typescript-eslint/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule invalid cases Invalid key - profile.avatar.remove (not defined) 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 26,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "profile.avatar.remove" is not defined in TranslationKeys.Did you mean: "profile.avatar.delete", "profile.avatar.upload"?",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "@custom-typescript-eslint/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule invalid cases Invalid nested key - profile.avatar.upload.icon 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 31,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "profile.avatar.upload.icon" is not defined in TranslationKeys.",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "@custom-typescript-eslint/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`valid-translation-key rule invalid cases Invalid partial key - login 1`] = `
+[
+  {
+    "column": 3,
+    "endColumn": 10,
+    "endLine": 1,
+    "line": 1,
+    "message": "The translation key "login" is not defined in TranslationKeys.",
+    "messageId": "invalidKey",
+    "nodeType": "Literal",
+    "ruleId": "@custom-typescript-eslint/valid-translation-key",
+    "severity": 2,
+  },
+]
+`;

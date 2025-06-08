@@ -1,7 +1,19 @@
 'use strict';
 
+import levenshtein from 'fast-levenshtein';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
+
+function getClosestKeys(target, options, threshold = 10) {
+  return options
+    .map((key) => ({
+      key,
+      distance: levenshtein.get(target, key),
+    }))
+    .filter(({ distance }) => distance <= threshold)
+    .sort((a, b) => a.distance - b.distance)
+    .map(({ key }) => key);
+}
 
 function parseTranslationKeys(content) {
   const match = content.match(/export\s+type\s+TranslationKeys\s*=\s*{([\s\S]*)};?/);
@@ -41,9 +53,29 @@ function parseObject(text) {
 }
 
 function isValidTranslationKey(key, structure) {
-  return key
-    .split('.')
-    .every((segment) => (structure = structure?.[segment]) !== undefined);
+  const segments = key.split('.');
+  let current = structure;
+  let lastValidPath = '';
+  let failedSegment = '';
+
+  for (let i = 0; i < segments.length; i++) {
+    const segment = segments[i];
+    if (current?.[segment] !== undefined) {
+      current = current[segment];
+      lastValidPath += (i > 0 ? '.' : '') + segment;
+    } else {
+      failedSegment = segment;
+      break;
+    }
+  }
+
+  if (failedSegment) {
+    const siblings = Object.keys(current || {});
+    const suggestions = getClosestKeys(failedSegment, siblings);
+    return { valid: false, suggestions, lastValidPath, failedSegment };
+  }
+
+  return { valid: current === true };
 }
 
 export default {
@@ -58,7 +90,8 @@ export default {
     },
     schema: [],
     messages: {
-      invalidKey: 'The translation key "{{ key }}" is not defined in TranslationKeys.',
+      invalidKey:
+        'The translation key "{{ key }}" is not defined in TranslationKeys.{{ suggestion }}',
     },
   },
 
@@ -85,11 +118,23 @@ export default {
           typeof node.arguments[0].value === 'string'
         ) {
           const key = node.arguments[0].value;
-          if (!isValidTranslationKey(key, translationKeysStructure)) {
+          const result = isValidTranslationKey(key, translationKeysStructure);
+          if (!result.valid) {
+            const suggestionMessage =
+              result.suggestions?.length > 0
+                ? ` Did you mean: ${result.suggestions
+                    .map((s) =>
+                      result.lastValidPath ? `"${result.lastValidPath}.${s}"` : `"${s}"`
+                    )
+                    .join(', ')}?`
+                : '';
             context.report({
               node: node.arguments[0],
               messageId: 'invalidKey',
-              data: { key },
+              data: {
+                key,
+                suggestion: suggestionMessage.trim(),
+              },
             });
           }
         }

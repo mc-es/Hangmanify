@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`require-usestate-type rule invalid cases React.useState without type 1`] = `
+[
+  {
+    "column": 27,
+    "endColumn": 45,
+    "endLine": 1,
+    "line": 1,
+    "message": "'React.useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "@custom-typescript-eslint/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule invalid cases useState with inferred array 1`] = `
+[
+  {
+    "column": 25,
+    "endColumn": 37,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "@custom-typescript-eslint/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule invalid cases useState with object but no type 1`] = `
+[
+  {
+    "column": 33,
+    "endColumn": 57,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "@custom-typescript-eslint/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule invalid cases useState with union but no type 1`] = `
+[
+  {
+    "column": 25,
+    "endColumn": 42,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "@custom-typescript-eslint/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`require-usestate-type rule invalid cases useState without type 1`] = `
+[
+  {
+    "column": 27,
+    "endColumn": 39,
+    "endLine": 1,
+    "line": 1,
+    "message": "'useState' should always have a type argument.",
+    "nodeType": "CallExpression",
+    "ruleId": "@custom-typescript-eslint/require-usestate-type",
+    "severity": 2,
+  },
+]
+`;

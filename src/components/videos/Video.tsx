@@ -83,7 +83,7 @@ const Video: React.FC<Readonly<VideoProps>> = (props): React.JSX.Element => {
           />
           {shouldShowThumbnail && (
             <Pressable style={StyleSheet.absoluteFill} onPress={handlePress}>
-              {generatedThumbnailUri.uri && (
+              {!!generatedThumbnailUri.uri && (
                 <Image
                   resizeMode="cover"
                   source={{ uri: generatedThumbnailUri.uri }}

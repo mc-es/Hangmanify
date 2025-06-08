@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filename-match-component rule -> invalid cases -> reports mismatch when casing differs 1`] = `
+[
+  {
+    "column": 7,
+    "endColumn": 8,
+    "endLine": 4,
+    "line": 2,
+    "message": "The file name "Test" must exactly match the component name "test" in PascalCase. No alternative naming is allowed.",
+    "nodeType": "ExportDefaultDeclaration",
+    "ruleId": "__test_plugin__/filename-match-component",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`filename-match-component rule -> invalid cases -> reports mismatch when class component name differs from filename 1`] = `
+[
+  {
+    "column": 7,
+    "endColumn": 31,
+    "endLine": 8,
+    "line": 8,
+    "message": "The file name "Test" must exactly match the component name "Mismatch" in PascalCase. No alternative naming is allowed.",
+    "nodeType": "ExportDefaultDeclaration",
+    "ruleId": "__test_plugin__/filename-match-component",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`filename-match-component rule -> invalid cases -> reports mismatch when function name differs from filename 1`] = `
+[
+  {
+    "column": 7,
+    "endColumn": 8,
+    "endLine": 5,
+    "line": 3,
+    "message": "The file name "Test" must exactly match the component name "Mismatch" in PascalCase. No alternative naming is allowed.",
+    "nodeType": "ExportDefaultDeclaration",
+    "ruleId": "__test_plugin__/filename-match-component",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`filename-match-component rule -> invalid cases -> reports mismatch when identifier export differs from filename 1`] = `
+[
+  {
+    "column": 7,
+    "endColumn": 28,
+    "endLine": 3,
+    "line": 3,
+    "message": "The file name "Test" must exactly match the component name "Wrong" in PascalCase. No alternative naming is allowed.",
+    "nodeType": "ExportDefaultDeclaration",
+    "ruleId": "__test_plugin__/filename-match-component",
+    "severity": 2,
+  },
+]
+`;
+
+exports[`filename-match-component rule -> invalid cases -> reports when default export is not a component 1`] = `
+[
+  {
+    "column": 7,
+    "endColumn": 24,
+    "endLine": 3,
+    "line": 3,
+    "message": "The file name "Test" must exactly match the component name "x" in PascalCase. No alternative naming is allowed.",
+    "nodeType": "ExportDefaultDeclaration",
+    "ruleId": "__test_plugin__/filename-match-component",
+    "severity": 2,
+  },
+]
+`;

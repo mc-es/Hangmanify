@@ -1,6 +1,6 @@
 export default {
   testEnvironment: 'node',
-  testMatch: ['**/tests/**/*.test.js'],
+  testMatch: ['**/tests/**/*.test.mjs'],
   moduleNameMapper: {
     '^plugins/(.*)$': '<rootDir>/plugins/$1',
   },

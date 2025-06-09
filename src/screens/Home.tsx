@@ -39,10 +39,7 @@ const Home = (): React.JSX.Element => {
       </Text>
       <Text>{count}</Text>
       <Button text="Increment" onPress={increase} />
-      <Button
-        text="About"
-        onPress={() => navigation.navigate(RouteNames.ABOUT, { name: 'can' })}
-      />
+      <Button text="About" onPress={() => navigation.navigate(RouteNames.ABOUT, { name: 'can' })} />
       <TextInput
         placeholder="input"
         style={{ borderWidth: 1, width: '50%' }}

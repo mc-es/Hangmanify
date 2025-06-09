@@ -26,10 +26,7 @@ export type RootStackParamList = {
  * navigation.navigate(RouteNames.PROFILE, { userId: '123' });
  */
 function useNavigation(): never;
-function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<
-  RootStackParamList,
-  T
->;
+function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<RootStackParamList, T>;
 function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<
   RootStackParamList,
   T
@@ -48,10 +45,7 @@ function useNavigation<T extends keyof RootStackParamList>(): NavigationProp<
  */
 function useRoute(): never;
 function useRoute<T extends keyof RootStackParamList>(): RouteProp<RootStackParamList, T>;
-function useRoute<T extends keyof RootStackParamList>(): RouteProp<
-  RootStackParamList,
-  T
-> {
+function useRoute<T extends keyof RootStackParamList>(): RouteProp<RootStackParamList, T> {
   return useNativeRoute<RouteProp<RootStackParamList, T>>();
 }
 

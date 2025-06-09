@@ -25,9 +25,9 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Make script executable
-        run: chmod +x scripts/update-commit-stats.sh
+        run: chmod +x scripts/commits/update-commit-stats.sh
       - name: Run stats update script
-        run: ./scripts/update-commit-stats.sh
+        run: ./scripts/commits/update-commit-stats.sh
       - name: Commit and push changes if needed
         run: |
           if git diff --quiet; then

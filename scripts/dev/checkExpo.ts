@@ -6,7 +6,7 @@ lookup('expo.dev', (err) => {
   if (err) process.exit(0); // no internet: silently skip without error
 
   try {
-    execFileSync('npx', ['expo-doctor@latest', '.'], { stdio: 'inherit' });
+    execFileSync('npx', ['expo-doctor@latest', '.'], { stdio: 'inherit' }); // nosonar
   } catch {
     process.exit(1);
   }

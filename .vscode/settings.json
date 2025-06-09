@@ -315,6 +315,12 @@
       "base": "test-js",
       "color": "yellow-500",
       "fileExtensions": ["test.mjs", "test.mjs.snap"]
+    },
+    {
+      "name": "custom-haxe",
+      "base": "haxe",
+      "color": "orange-500",
+      "fileNames": ["cn.ts"]
     }
   ],
   "material-icon-theme.folders.customClones": [

@@ -66,10 +66,7 @@ const Video: React.FC<Readonly<VideoProps>> = (props): React.JSX.Element => {
   };
 
   const shouldShowThumbnail =
-    thumbnail.enabled &&
-    !autoPlay &&
-    !hasPlayedOnce.current &&
-    !!generatedThumbnailUri.uri;
+    thumbnail.enabled && !autoPlay && !hasPlayedOnce.current && !!generatedThumbnailUri.uri;
 
   return (
     <View

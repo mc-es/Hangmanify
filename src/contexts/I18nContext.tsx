@@ -45,9 +45,7 @@ const I18nContext = createContext<I18nContextProps>({
 const I18nProvider: React.FC<{ children: React.JSX.Element }> = ({
   children,
 }): React.JSX.Element => {
-  const [locale, setLocale] = useState<AvailableLanguages>(
-    i18n.locale as AvailableLanguages
-  );
+  const [locale, setLocale] = useState<AvailableLanguages>(i18n.locale as AvailableLanguages);
 
   const toggleI18n = (newLocale: AvailableLanguages): void => {
     i18n.locale = newLocale;

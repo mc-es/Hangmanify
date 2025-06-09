@@ -17,9 +17,7 @@ const ThemeContext = createContext<ThemeContextProps>({
   toggleTheme: () => {},
 });
 
-const getThemeAndSystem = (
-  scheme: ColorSchemeName
-): Omit<ThemeContextProps, 'toggleTheme'> => ({
+const getThemeAndSystem = (scheme: ColorSchemeName): Omit<ThemeContextProps, 'toggleTheme'> => ({
   system: scheme === SYSTEM_THEME.DARK ? SYSTEM_THEME.DARK : SYSTEM_THEME.LIGHT,
   theme: scheme === SYSTEM_THEME.DARK ? DarkTheme : LightTheme,
 });

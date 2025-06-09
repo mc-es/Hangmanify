@@ -80,11 +80,7 @@ const useLoadVideo = ({ source }: LoadVideo['request']): LoadVideo['response'] =
  * @example
  * const { uri: thumbnail } = useThumbnail({ enabled: true, time: 2, uri: videoUri });
  */
-const useThumbnail = ({
-  enabled,
-  time,
-  uri,
-}: Thumbnail['request']): Thumbnail['response'] => {
+const useThumbnail = ({ enabled, time, uri }: Thumbnail['request']): Thumbnail['response'] => {
   const [thumbnailUri, setThumbnailUri] = useState<string | null>(null);
 
   useEffect((): (() => void) => {
@@ -139,14 +135,7 @@ const useVideoPlayer = ({
         onPlay?.();
       }
     },
-    [
-      config.autoPlay,
-      config.initialPosition,
-      config.loop,
-      config.muted,
-      config.volume,
-      onPlay,
-    ]
+    [config.autoPlay, config.initialPosition, config.loop, config.muted, config.volume, onPlay]
   );
 
   const player = useExpoVideoPlayer(source, initializePlayer);

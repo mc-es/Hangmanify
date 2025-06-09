@@ -14,7 +14,7 @@
     "docz:serve": "docz serve",
     "check:ts": "tsc",
     "check:deps": "expo install --check",
-    "check:expo": "npx expo-doctor@latest .",
+    "check:expo": "tsx scripts/dev/checkExpo.ts",
     "check:pkg": "sh scripts/yarn/analyze-deps.sh",
     "check:vscode-extensions": "code --list-extensions | jq -R . | jq -s '{\"recommendations\": .}' > .vscode/extensions.json",
     "prepare": "husky",

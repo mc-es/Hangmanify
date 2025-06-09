@@ -10,9 +10,16 @@ import { mergeVideoProps } from './initial';
 import type { VideoProps } from './types';
 
 /**
- * ### Custom Video component built on top of expo-video.
- * @param props Props for configuring the Video component.
- * @returns Rendered Video JSX element.
+ * ### Custom Video component built on top of expo-video
+ * @param {Readonly<VideoProps>} props - Video configuration and display options
+ * @returns {React.JSX.Element} Rendered video player with optional thumbnail and controls
+ * @example
+ * <Video
+ *   source={require('./video.mp4')}
+ *   showControls
+ *   autoPlay={false}
+ *   thumbnail={{ enabled: true, time: 1 }}
+ * />
  */
 const Video: React.FC<Readonly<VideoProps>> = (props): React.JSX.Element => {
   const {

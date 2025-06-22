@@ -8,7 +8,7 @@ export default {
         'Enforces that JSX props are sorted in alphabetical order for readability and consistency.',
       category: 'Stylistic Issues',
       recommended: false,
-      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/jsx-sort-props.md',
+      url: 'https://github.com/mc-es/Hangmanify/blob/master/guides/rules/jsx-sort-props.md',
     },
     schema: [],
     messages: {

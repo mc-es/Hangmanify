@@ -1,6 +1,6 @@
 /**
  * @fileoverview Tests for jsx-sort-props rule.
- * @see https://github.com/mces58/Hangmanify/blob/master/guides/rules/jsx-sort-props.md
+ * @see https://github.com/mc-es/Hangmanify/blob/master/guides/rules/jsx-sort-props.md
  */
 import rule from 'plugins/rules/jsx-sort-props.mjs';
 

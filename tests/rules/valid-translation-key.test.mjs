@@ -1,6 +1,6 @@
 /**
  * @fileoverview Tests for valid-translation-key rule.
- * @see https://github.com/mces58/Hangmanify/blob/master/guides/rules/valid-translation-key.md
+ * @see https://github.com/mc-es/Hangmanify/blob/master/guides/rules/valid-translation-key.md
  *
  * TranslationKeys structure used in tests (from src/constants/localization/translation-keys.d.ts):
  */

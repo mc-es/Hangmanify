@@ -1,6 +1,6 @@
 /**
  * @fileoverview Tests for match-navigation-route rule.
- * @see https://github.com/mces58/Hangmanify/blob/master/guides/rules/match-navigation-route.md
+ * @see https://github.com/mc-es/Hangmanify/blob/master/guides/rules/match-navigation-route.md
  */
 import rule from 'plugins/rules/match-navigation-route.mjs';
 

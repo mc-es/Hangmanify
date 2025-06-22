@@ -1,6 +1,6 @@
 /**
  * @fileoverview Tests for filename-match-component rule.
- * @see https://github.com/mces58/Hangmanify/blob/master/guides/rules/filename-match-component.md
+ * @see https://github.com/mc-es/Hangmanify/blob/master/guides/rules/filename-match-component.md
  */
 import rule from 'plugins/rules/filename-match-component.mjs';
 

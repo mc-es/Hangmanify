@@ -10,7 +10,7 @@ export default {
         'Enforces that the file name exactly matches the default exported React component name in PascalCase.',
       category: 'Stylistic Issues',
       recommended: false,
-      url: 'https://github.com/mces58/Hangmanify/blob/master/guides/rules/filename-match-component.md',
+      url: 'https://github.com/mc-es/Hangmanify/blob/master/guides/rules/filename-match-component.md',
     },
     schema: [],
   },

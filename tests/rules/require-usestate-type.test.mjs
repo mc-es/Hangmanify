@@ -1,6 +1,6 @@
 /**
  * @fileoverview Tests for require-usestate-type rule.
- * @see https://github.com/mces58/Hangmanify/blob/master/guides/rules/require-usestate-type.md
+ * @see https://github.com/mc-es/Hangmanify/blob/master/guides/rules/require-usestate-type.md
  */
 import rule from 'plugins/rules/require-usestate-type.mjs';
 

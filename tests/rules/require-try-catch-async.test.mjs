@@ -1,6 +1,6 @@
 /**
  * @fileoverview Tests for require-try-catch-async rule.
- * @see https://github.com/mces58/Hangmanify/blob/master/guides/rules/require-try-catch-async.md
+ * @see https://github.com/mc-es/Hangmanify/blob/master/guides/rules/require-try-catch-async.md
  */
 import rule from 'plugins/rules/require-try-catch-async.mjs';
 

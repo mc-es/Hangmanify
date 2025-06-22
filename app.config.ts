@@ -7,7 +7,7 @@ const getSplashConfig = (): ExpoConfig['splash'] => ({
 });
 
 const getAndroidConfig = (): ExpoConfig['android'] => ({
-  package: 'com.mces58.hangmanify',
+  package: 'com.mces.hangmanify',
   adaptiveIcon: {
     backgroundColor: '#151718',
     backgroundImage: './assets/icons/android/adaptive-icon.png',
@@ -17,6 +17,7 @@ const getAndroidConfig = (): ExpoConfig['android'] => ({
 });
 
 const getIosConfig = (): ExpoConfig['ios'] => ({
+  supportsTablet: true,
   icon: {
     dark: './assets/icons/ios/dark.png',
     light: './assets/icons/ios/light.png',

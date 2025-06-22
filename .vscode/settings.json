@@ -1,7 +1,7 @@
 {
   "sonarlint.connectedMode.project": {
     "connectionId": "hangmanify",
-    "projectKey": "mces58_Hangmanify"
+    "projectKey": "mc-es_Hangmanify"
   },
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Aura Dracula Spirit",

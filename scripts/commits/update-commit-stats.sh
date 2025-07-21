@@ -5,8 +5,10 @@ TEMP_OUTPUT=".husky/.readme-without-stats.tmp"
 TEMP_STATS=".husky/.commit-raw.tmp"
 TEMP_CHART=".husky/.commit-chart.tmp"
 
-# 1. Get commit types from the full history
-git log --pretty=format:'%s' \
+# 1. Get commit types from the full history (excluding bot commits)
+git log --pretty=format:'%an|%s' --no-merges \
+  | grep -v '^github-actions\[bot\]|' \
+  | cut -d'|' -f2 \
   | grep -o '^[a-z]\+' \
   | sort | uniq -c | sort -nr > "$TEMP_STATS"
 

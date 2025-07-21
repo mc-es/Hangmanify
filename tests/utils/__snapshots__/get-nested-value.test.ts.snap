@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getNestedValue retrieves a nested value correctly 1`] = `"Alice"`;
+
+exports[`getNestedValue returns null for missing keys 1`] = `null`;
+
+exports[`getNestedValue returns null if object is null 1`] = `null`;
+
+exports[`getNestedValue returns root object if key is empty 1`] = `
+{
+  "something": 42,
+}
+`;

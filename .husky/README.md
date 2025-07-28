@@ -153,14 +153,14 @@ You can extend or customize this system by editing or adding logic in the follow
 
 ## 📊 Weekly Commit Type Stats
 ```
-chore    : 32 commits (37%)
+chore    : 33 commits (38%)
 feat     : 18 commits (21%)
 fix      : 10 commits (12%)
 docs     :  7 commits (8%)
 test     :  6 commits (7%)
 init     :  5 commits (6%)
 change   :  4 commits (5%)
-style    :  3 commits (4%)
+style    :  3 commits (3%)
 ```
 
 ---

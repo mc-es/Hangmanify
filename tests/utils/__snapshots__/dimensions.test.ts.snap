@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dimensions utils fs: scales font size with font scale 1 1`] = `14`;
+
+exports[`dimensions utils fs: scales font size with font scale 1.2 1`] = `9`;
+
+exports[`dimensions utils hp: calculates height percentage correctly 1`] = `203`;
+
+exports[`dimensions utils hs: scales horizontal size correctly 1`] = `12`;
+
+exports[`dimensions utils ms: applies moderate scaling with custom factor 1`] = `15`;
+
+exports[`dimensions utils ms: applies moderate scaling with default factor 1`] = `17.5`;
+
+exports[`dimensions utils snapshot: matches all outputs together 1`] = `
+{
+  "fsNormal": 16,
+  "hp": 203,
+  "hs": 12,
+  "msCustom": 15,
+  "msDefault": 17.5,
+  "vs": 16,
+  "wp": 187.5,
+  "wpNegative": 0,
+  "wpOver": 375,
+}
+`;
+
+exports[`dimensions utils vs: scales vertical size correctly 1`] = `16`;
+
+exports[`dimensions utils wp: calculates width percentage correctly 1`] = `187.5`;
+
+exports[`dimensions utils wp: clamps percentages less than 0 1`] = `0`;
+
+exports[`dimensions utils wp: clamps percentages more than 100 1`] = `375`;

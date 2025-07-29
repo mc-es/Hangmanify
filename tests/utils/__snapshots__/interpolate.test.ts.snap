@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`interpolate leaves unmatched placeholders empty 1`] = `"Hello, Can, you are  years old."`;
+
+exports[`interpolate replaces placeholders with provided values 1`] = `"Hello, Can!"`;
+
+exports[`interpolate returns original string if no placeholders 1`] = `"Hello world!"`;
+
+exports[`interpolate trims spaces in placeholders 1`] = `"Hi, Can!"`;

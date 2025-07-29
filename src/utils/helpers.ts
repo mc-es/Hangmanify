@@ -11,10 +11,10 @@ import type { TranslateOptions } from 'i18n-js';
  * const name = getNestedValue(user, 'profile.name'); // 'Alice'
  */
 function getNestedValue<T>(obj: T, key: string): unknown {
+  if (!key) return obj;
   return key.split('.').reduce((acc: unknown, curr: string): unknown => {
     if (acc !== null && typeof acc === 'object' && curr in acc)
       return (acc as Record<string, unknown>)[curr];
-
     return null;
   }, obj as unknown);
 }

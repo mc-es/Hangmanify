@@ -1,10 +1,11 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { ActivityIndicator, Image, Pressable, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 
 import { VideoView } from 'expo-video';
 
 import { useTheme } from 'src/contexts';
 
+import { Image } from '../images';
 import { useLoadVideo, useThumbnail, useVideoPlayer } from './hooks';
 import { mergeVideoProps } from './initial';
 import type { VideoProps } from './types';
@@ -88,11 +89,7 @@ const Video: React.FC<Readonly<VideoProps>> = (props): React.JSX.Element => {
           {shouldShowThumbnail && (
             <Pressable style={StyleSheet.absoluteFill} onPress={handlePress}>
               {!!generatedThumbnailUri.uri && (
-                <Image
-                  resizeMode="cover"
-                  source={{ uri: generatedThumbnailUri.uri }}
-                  style={[StyleSheet.absoluteFill, size]}
-                />
+                <Image contentFit="cover" size={size} source={{ uri: generatedThumbnailUri.uri }} />
               )}
             </Pressable>
           )}

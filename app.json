@@ -1,9 +1,6 @@
 {
   "expo": {
     "owner": "mc-es",
-    "name": "Hangmanify",
-    "slug": "Hangmanify",
-    "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true
